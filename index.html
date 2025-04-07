@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Head Line</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="footer.style.css" />
+  <script src="modal.js"></script>
+</head>
+<body>
+  
+  <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.svg" alt="Head Line" />
+        </a>
+      </div>
+  
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Главная</a></li>
+  
+          <li class="dropdown">
+            <a href="index.html#services">Услуги ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="mens.html">Мужские услуги</a></li>
+              <!--<li><a href="womens.html">Женские услуги</a></li>-->
+              <li><a href="combo.html">Комплексные</a></li>
+              <li><a href="products.html">Товары для ухода</a></li>
+              
+            </ul>
+          <li><a href="training.html">Обучение</a></li>
+          </li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="reviews.html">Отзывы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ <!-- БАНЕР -->
+ <section class="hero spinning-banner">
+   <div class="rotating-circle"></div>
+   <div class="hero-content">
+      <h1>Head Line</h1>
+      <p>Стрижем как для себя. Уход, стиль и уверенность — в одном месте.</p>
+      <a href="#" class="hero-btn">Записаться</a>
+   </div>
+ </section>
+
+   
+  <!-- КАТЕГОРИИ ОСНОВНЫХ УСЛУГ С СЫЛКОЙ НА ПРАЙС И ЗАПИСЬ -->
+ <section id="services" class="services">
+   <div class="container services-container">
+     <h2 class="section-title">Наши услуги</h2>
+ 
+     <div class="services-list">
+ 
+       <a href="mens.html" class="service-link">
+         <div class="service-card">
+           <img src="images/mens.jpg" alt="Мужские услуги" />
+           <h3>Мужские услуги</h3>
+         </div>
+       </a>
+
+       <a href="womens.html" class="service-link">
+         <div class="service-card">
+           <img src="images/womens.jpg" alt="Женские услуги" />
+           <h3>Женские услуги</h3>
+         </div>
+       </a>
+
+       <a href="combo.html" class="service-link">
+         <div class="service-card">
+           <img src="images/combo.jpg" alt="Комплексные услуги" />
+           <h3>Комплексные услуги</h3>
+         </div>
+       </a>
+
+       <a href="products.html" class="service-link">
+         <div class="service-card">
+           <img src="images/products.jpg" alt="Товары для ухода" />
+           <h3>Товары для ухода</h3>
+         </div>
+       </a>
+
+       <a href="training.html" class="service-link">
+         <div class="service-card">
+           <img src="images/training.jpg" alt="Обучение" />
+           <h3>Обучение</h3>
+         </div>
+       </a>
+ 
+     </div>
+   </div>
+  </section>
+
+   <!-- Модальное окно -->
+ <div class="modal" id="bookingModal">
+   <div class="modal-content">
+     <span class="close-btn" id="closeModal">&times;</span>
+     <h2>Запись на услугу</h2>
+     <form>
+       <input type="text" placeholder="Ваше имя" required>
+       <input type="tel" placeholder="Телефон" required>
+       <textarea placeholder="Комментарий (необязательно)"></textarea>
+       <button type="submit">Отправить заявку</button>
+       <p id="formError" style="color: red; text-align: center; display: none;">Ошибка: заполните все поля корректно.</p>
+     </form>
+   </div>
+ </div>
+
+ <!-- Модальное подтверждение -->
+ <div class="modal" id="successModal">
+     <div class="modal-content">
+       <span class="close-btn" id="closeSuccess">&times;</span>
+       <div class="checkmark">&#10004;</div>
+       <h2>Спасибо!</h2>
+       <p>Ваша заявка успешно отправлена.</p>
+     </div>
+   </div>
+
+<!-- Подвал сайта -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-top">
+      
+      <!-- Левая колонка: Лого и соцсети -->
+      <div class="footer-column">
+        <div class="footer-left-inner">
+          <div class="footer-logo">
+            <img src="images/logo.svg" alt="Head Line" />
+          </div>
+          <div class="footer-socials">
+            <a href="https://vk.com/headlinespb" target="_blank" aria-label="VK">
+              <img src="images/vk.png" alt="VK" />
+            </a>
+            <a href="https://wa.me/79219342307" target="_blank" aria-label="WhatsApp">
+              <img src="images/whatsapp.png" alt="WhatsApp" />
+            </a>
+            <a href="https://yandex.ru/profile/67905101910?lang=ru" target="_blank" aria-label="Yandex Maps">
+              <img src="images/yandex.png" alt="Yandex Maps" />
+            </a>
+            <a href="https://2gis.ru/spb/firm/70000001089604614/" target="_blank" aria-label="2GIS">
+              <img src="images/2gis.png" alt="2GIS" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Центр: Навигация -->
+      <div class="footer-column footer-nav">
+        <a href="index.html">Главная</a>
+        <a href="mens.html">Услуги</a>
+        <a href="training.html">Обучение</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+
+      <!-- Правая колонка: Контакты -->
+      <div class="footer-column footer-info">
+        <p><strong>Телефон:</strong> <a href="tel:+79219342307">+7 (921) 934-23-07</a></p>
+        <p><strong>Email:</strong> <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a></p>
+        <p><strong>Адрес:</strong> г. Санкт-Петербург,<br>ул. Рузовская, д. 13</p>
+      </div>
+      
+    </div>
+
+    <!-- Низ футера -->
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="privacy.html">Политика обработки персональных данных</a>
+        <a href="terms.html">Пользовательское соглашение и политика конфиденциальности</a>
+      </div>
+      <p class="copyright">© 2025 Head Line. Все права защищены.</p>
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>

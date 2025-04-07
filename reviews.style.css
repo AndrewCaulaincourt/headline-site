@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+/* Стиль страницы в целом + шрифт */
+body {
+  margin: 0;
+  padding-top: 80px; /* высота хедера + запас */
+  font-family: 'Rubik', sans-serif; /* Шрифт на описание (текст) */
+  background-color: #000000;
+  position: relative;
+  z-index: 0;
+}
+
+/* Затемнение как в баннере */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* затемняем, как на главной */
+  z-index: -1;
+}
+
+/* КРУГ — по центру, огромный и медленно вращается */
+body::before {
+  content: '';
+  position: fixed;
+  top: calc(50% + 40px);
+  left: 50%;
+  width: 1900px;
+  height: 1900px;
+  background: url('images/calligraphy-circle.svg') no-repeat center center;
+  background-size: contain;
+  opacity: 0.3;
+  transform: translate(-50%, -50%);
+  animation: rotateSlow 150s linear infinite;
+  z-index: -2;
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Russo+One&display=swap'); /* шрифты используемые на странице */
+/* Страница косметики по уходу */
+/* Стиль страницы в целом */
+body {
+  margin: 0;
+  padding-top: 80px; /* высота хедера + запас */
+  font-family: 'Rubik', sans-serif; /* Шрифт на описание (текст) */
+  background-color: #000000;
+  position: relative;
+  z-index: 0;
+}
+
+/* Затемнение как в баннере */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* затемняем, как на главной */
+  z-index: -1;
+}
+
+/* КРУГ — по центру, огромный и медленно вращается */
+body::before {
+  content: '';
+  position: fixed;
+  top: calc(50% + 40px);
+  left: 50%;
+  width: 1900px;
+  height: 1900px;
+  background: url('images/calligraphy-circle.svg') no-repeat center center;
+  background-size: contain;
+  opacity: 0.3;
+  transform: translate(-50%, -50%);
+  animation: rotateSlow 150s linear infinite;
+  z-index: -2;
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Стилизация текста "Товары для ухода" */
+.page-layout {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+  padding: 0 20px;
+}
+
+/* Контейнер для заголовка */
+/* Фиксированный заголовок */
+.fixed-left-title {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  align-self: flex-start;
+  min-width: 200px;
+  z-index: 5;
+}
+
+.page-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #e0c066;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+  letter-spacing: 3px;
+}
+
+/* Отступы от Хедера и Футера */
+.page-section {
+  padding: 80px 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Сетка товаров */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+/* Карточка товара*/
+.product-card {
+  background-color: rgba(30, 30, 30, 0.7);
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  background-color: rgba(30, 30, 30, 0.85); /* эффект при наведении */
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Картинка товара */
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Название товара и цена */
+.product-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-card .price {
+  font-size: 18px;
+  color: #e0c066;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Кнопка "КУПИТЬ" */
+.btn-buy {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #e0c066;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-buy:hover {
+  background-color: #d4b350;
+}
+
+/* Стилизация модалки в товарах на покупку */
+#buySuccess .modal-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkmark {
+  font-size: 50px;
+  color: #31c48d;
+  margin-bottom: 15px;
+  animation: pop 0.3s ease;
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 1024px) {
+  .page-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .fixed-left-title {
+    position: static;
+    text-align: center;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+}
+
+/* Адаптив для мобильных (я плакал) */
+@media (max-width: 768px) {
+  .page-layout {
+    padding: 0 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fixed-left-title {
+    position: static;
+    transform: none;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 200px;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  .btn-buy {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+}
+
+/* Основной хедер */
+.header {
+  background-color: #0f0f0f;
+  padding: 10px 0;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Логотип */
+.logo img {
+  height: 50px;
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover {
+  color: #e0c066;
+}
+
+/* Бургер-меню */
+.burger {
+  display: none; /* Только на мобилках */
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.4s ease;
+}
+
+/* Анимация бургер-меню при открытии */
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Адаптив бургера */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #0f0f0f;
+    flex-direction: column;
+    padding: 0;
+    z-index: 1000;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    background-color: #0f0f0f;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-list.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px 0;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Стили для кнопок меню бургера (подсветка + свечение) */
+@media (max-width: 768px) {
+  a:hover,
+  a:focus,
+  a:active {
+    color: #e0c066;
+    text-shadow: 0 0 8px #e0c066;
+  }
+}
+
+/* Стили бургера (подсветка + свечение) */
+@media (max-width: 768px) {
+  .burger.active span {
+    background-color: #e0c066;
+    box-shadow: 0 0 10px #e0c066;
+  }
+}
+

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товары для ухода | Head Line</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="products.style.css">
+  <link rel="stylesheet" href="footer.style.css" />
+  <script src="modal.js"></script>
+</head>
+<body>
+
+  <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.svg" alt="Head Line" />
+        </a>
+      </div>
+
+      <!-- Только для мобильной версии -->
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Главная</a></li>
+  
+          <li class="dropdown">
+            <a href="index.html#services">Услуги ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="mens.html">Мужские услуги</a></li>
+              <!--<li><a href="womens.html">Женские услуги</a></li>-->
+              <li><a href="combo.html">Комплексные</a></li>
+              <li><a href="products.html">Товары для ухода</a></li>
+              
+            </ul>
+          <li><a href="training.html">Обучение</a></li>
+          </li>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="reviews.html">Отзывы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Контент -->
+  <section class="page-section">
+    <div class="container page-layout">
+      <div class="fixed-left-title">
+      <h1 class="page-title">Товары<br>для ухода</h1>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/wax.jpg" alt="Воск для укладки">
+          <h3>Воск для укладки</h3>
+          <p class="price">650 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/oil.jpg" alt="Масло для бороды">
+          <h3>Масло для бороды</h3>
+          <p class="price">800 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
+          <h3>Шампунь для мужчин</h3>
+          <p class="price">550 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
+          <h3>Шампунь для мужчин</h3>
+          <p class="price">550 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
+          <h3>Шампунь для мужчин</h3>
+          <p class="price">550 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
+          <h3>Шампунь для мужчин</h3>
+          <p class="price">550 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
+          <h3>Шампунь для мужчин</h3>
+          <p class="price">550 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
+          <h3>Шампунь для мужчин</h3>
+          <p class="price">550 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+
+        <div class="product-card">
+          <img src="images/balm.jpg" alt="Бальзам для бороды">
+          <h3>Бальзам для бороды</h3>
+          <p class="price">700 ₽</p>
+          <a href="#" class="btn-buy">Купить</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно КУПИТЬ ТОВАР -->
+  <div class="modal" id="buyModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeBuy">&times;</span>
+      <h2>Оформление заказа</h2>
+      <p id="selectedProduct" style="margin-bottom: 20px; font-weight: bold; color: #e0c066;"></p>
+      <form id="buyForm">
+        <input type="text" id="userName" placeholder="Ваше имя" required>
+        <input type="tel" id="userPhone" placeholder="Телефон" required>
+        <input type="number" id="userQty" min="1" value="1" placeholder="Количество" required>
+        <button type="submit">Оформить заказ</button>
+      </form>    
+    </div>
+  </div>
+
+  <!-- Модальное окно УСПЕШНОЙ ПОКУПКИ -->
+  <div class="modal" id="buySuccess" style="display: none;">
+    <div class="modal-content" style="text-align: center;">
+      <span class="close-btn" id="closeBuySuccess">&times;</span>
+      <div class="checkmark" style="font-size: 50px; color: #31c48d; margin-bottom: 15px;">&#10004;</div>
+      <h2>Спасибо!</h2>
+      <p>Ваш заказ успешно оформлен.</p>
+    </div>
+  </div>
+  <script src="buy.js"></script>
+  
+  <!-- Подвал сайта -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-top">
+      
+      <!-- Левая колонка: Лого и соцсети -->
+      <div class="footer-column">
+        <div class="footer-left-inner">
+          <div class="footer-logo">
+            <img src="images/logo.svg" alt="Head Line" />
+          </div>
+          <div class="footer-socials">
+            <a href="https://vk.com/headlinespb" target="_blank" aria-label="VK">
+              <img src="images/vk.png" alt="VK" />
+            </a>
+            <a href="https://wa.me/79219342307" target="_blank" aria-label="WhatsApp">
+              <img src="images/whatsapp.png" alt="WhatsApp" />
+            </a>
+            <a href="https://yandex.ru/profile/67905101910?lang=ru" target="_blank" aria-label="Yandex Maps">
+              <img src="images/yandex.png" alt="Yandex Maps" />
+            </a>
+            <a href="https://2gis.ru/spb/firm/70000001089604614/" target="_blank" aria-label="2GIS">
+              <img src="images/2gis.png" alt="2GIS" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Центр: Навигация -->
+      <div class="footer-column footer-nav">
+        <a href="index.html">Главная</a>
+        <a href="mens.html">Услуги</a>
+        <a href="training.html">Обучение</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+
+      <!-- Правая колонка: Контакты -->
+      <div class="footer-column footer-info">
+        <p><strong>Телефон:</strong> <a href="tel:+79219342307">+7 (921) 934-23-07</a></p>
+        <p><strong>Email:</strong> <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a></p>
+        <p><strong>Адрес:</strong> г. Санкт-Петербург,<br>ул. Рузовская, д. 13</p>
+      </div>
+      
+    </div>
+
+    <!-- Низ футера -->
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="privacy.html">Политика обработки персональных данных</a>
+        <a href="terms.html">Пользовательское соглашение и политика конфиденциальности</a>
+      </div>
+      <p class="copyright">© 2025 Head Line. Все права защищены.</p>
+    </div>
+
+  </div>
+</footer>
+
+
+</body>
+</html>
+
