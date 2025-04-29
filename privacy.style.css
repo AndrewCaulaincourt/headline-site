@@ -34,7 +34,7 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  height: 35px;
 }
 
 .nav-list {
@@ -171,3 +171,176 @@ body {
   color: #e0c066;
   text-decoration: underline;
 }
+
+/* Адаптив под мобилку */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .policy-content {
+    padding: 30px 15px;
+    font-size: 15px;
+  }
+
+  .policy-content h1 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .policy-content h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+  }
+
+  .policy-content p {
+    font-size: 15px;
+  }
+
+  .dropdown-menu {
+    min-width: 100%;
+    white-space: nowrap;
+  }
+
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    background-color: #0f0f0f;
+    width: 100%;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .nav-list.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .burger.active span {
+    background-color: #e0c066;
+    box-shadow: 0 0 10px #e0c066;
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    color: #e0c066;
+    text-shadow: 0 0 8px #e0c066;
+  }
+}
+
+/* Бургер-меню */
+.burger {
+  display: none; /* Только на мобилках */
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.4s ease;
+}
+
+/* Анимация бургер-меню при открытии */
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Адаптив бургера */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #0f0f0f;
+    flex-direction: column;
+    padding: 0;
+    z-index: 1000;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    background-color: #0f0f0f;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-list.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px 0;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Стили для кнопок меню бургера (подсветка + свечение) */
+@media (max-width: 768px) {
+  a:hover,
+  a:focus,
+  a:active {
+    color: #e0c066;
+    text-shadow: 0 0 8px #e0c066;
+  }
+}
+
+/* Стили бургера (подсветка + свечение) */
+@media (max-width: 768px) {
+  .burger.active span {
+    background-color: #e0c066;
+    box-shadow: 0 0 10px #e0c066;
+  }
+}
+

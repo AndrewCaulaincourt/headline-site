@@ -44,11 +44,11 @@ body::before {
   }
 }
 
-.products-container {
+/* (тут нет такого класса, надо проверить наверняка) .products-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
+} */
 
 /* Стилизация текста "Товары для ухода" */
 .page-layout {
@@ -85,9 +85,7 @@ body::before {
 
 /* Отступы от Хедера и Футера */
 .page-section {
-  padding: 80px 20px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 40px 30px 60px;
 }
 
 /* Сетка товаров */
@@ -119,11 +117,15 @@ body::before {
 /* Картинка товара */
 .product-card img {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
+  max-height: 240px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  background-color: #ffffff; /* фон под изображением */
   border-radius: 8px;
   margin-bottom: 20px;
 }
+
 
 /* Название товара и цена */
 .product-card h3 {
@@ -138,7 +140,7 @@ body::before {
   margin-bottom: 20px;
 }
 
-/* Кнопка "КУПИТЬ" */
+/* Кнопка "УЗНАТЬ ПОДРОБНЕЕ" */
 .btn-buy {
   display: inline-block;
   padding: 12px 25px;
@@ -171,71 +173,6 @@ body::before {
   animation: pop 0.3s ease;
 }
 
-/* Адаптив для планшетов */
-@media (max-width: 1024px) {
-  .page-layout {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .fixed-left-title {
-    position: static;
-    text-align: center;
-    transform: none;
-    margin-bottom: 20px;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-  .product-card img {
-    height: 220px;
-  }
-}
-
-/* Адаптив для мобильных (я плакал) */
-@media (max-width: 768px) {
-  .page-layout {
-    padding: 0 10px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .fixed-left-title {
-    position: static;
-    transform: none;
-    margin-bottom: 20px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-card img {
-    height: 200px;
-  }
-
-  .product-card {
-    padding: 15px;
-  }
-
-  .btn-buy {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .page-title {
-    font-size: 24px;
-    letter-spacing: 1.5px;
-    text-align: center;
-  }
-}
-
 /* Основной хедер */
 .header {
   background-color: #0f0f0f;
@@ -260,7 +197,7 @@ body::before {
 
 /* Логотип */
 .logo img {
-  height: 50px;
+  height: 35px;
 }
 
 /* Навигация */
@@ -382,3 +319,129 @@ body::before {
   }
 }
 
+/* Адаптив для планшетов */
+@media (max-width: 1024px) {
+  .page-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .fixed-left-title {
+    position: static;
+    text-align: center;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+}
+
+/* Адаптив для мобильных (я плакал) */
+@media (max-width: 768px) {
+  .page-layout {
+    padding: 0 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fixed-left-title {
+    position: static;
+    transform: none;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 200px;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  .btn-buy {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+#productModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+}
+
+.product-modal-content {
+  background-color: #0f0f0f;
+  padding: 40px;
+  max-width: 900px;
+  width: 90%;
+  color: white;
+  position: relative;
+  border-radius: 12px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 32px;
+  cursor: pointer;
+  color: white;
+}
+
+.product-modal-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.product-modal-image img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-modal-details {
+  flex: 1;
+  font-size: 16px;
+}
+
+.product-modal-details h2 {
+  color: #e0c066;
+  margin-bottom: 15px;
+}
+
+.product-price {
+  font-size: 22px;
+  color: #e0c066;
+  margin-bottom: 10px;
+}

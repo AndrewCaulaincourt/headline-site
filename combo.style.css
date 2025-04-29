@@ -129,9 +129,14 @@ html {
 }  
 
 .logo img {
-  height: 50px;
+  height: 35px;
 }
-  
+
+/* Навигация */
+.nav {
+  display: flex;
+}
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -144,7 +149,7 @@ html {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.3s ease, max-height 0.4s ease, opacity 0.3s ease;
 }
   
 .nav-list a:hover {
@@ -463,58 +468,6 @@ html {
     padding: 10px 15px;
     font-size: 14px;
   }
-}
-
-/* Основной хедер */
-.header {
-  background-color: #0f0f0f;
-  padding: 10px 0;
-  color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.container {
-  max-width: 1200px;
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Логотип */
-.logo img {
-  height: 50px;
-}
-
-/* Навигация */
-.nav {
-  display: flex;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-}
-
-.nav-list a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.nav-list a:hover {
-  color: #e0c066;
 }
 
 /* Бургер-меню */

@@ -1,47 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Russo+One&display=swap'); /* шрифты используемые на странице */
+
+/* Стиль страницы в целом */
+body {
+  margin: 0;
+  padding-top: 80px; /* высота хедера + запас */
+  font-family: 'Rubik', sans-serif; /* Шрифт на описание (текст) */
+  background-color: #000000;
+  position: relative;
+  z-index: 0;
+}
+
+/* Затемнение как в баннере */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* затемняем, как на главной */
+  z-index: -1;
+}
+
+/* КРУГ — по центру, огромный и медленно вращается */
+body::before {
+  content: '';
+  position: fixed;
+  top: calc(50% + 40px);
+  left: 50%;
+  width: 1900px;
+  height: 1900px;
+  background: url('images/calligraphy-circle.svg') no-repeat center center;
+  background-size: contain;
+  opacity: 0.3;
+  transform: translate(-50%, -50%);
+  animation: rotateSlow 150s linear infinite;
+  z-index: -2;
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.page-layout {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.fixed-left-title {
+  position: sticky;
+  align-self: flex-start;
+  min-width: 200px;
+  transform: translateY(-50%);
+  min-width: 200px;
+  z-index: 10;
+}
+
+.page-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #e0c066;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.3;
+  text-align: left;
+}
+
+
+/* Стили блока с текстом */
 .about-section {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 80px 0;
-  }
-  
-  .about-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .about-content {
-    display: flex;
-    flex-wrap: wrap;
+  padding: 100px 20px;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 0;
+  line-height: 1.8;
+  font-size: 18px;
+  text-align: justify;
+}
+
+
+.about-content p {
+  margin-bottom: 20px;
+}
+
+.about-content strong {
+  color: #e0c066;
+}
+
+.about-content em {
+  display: block;
+  margin-top: 20px;
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Адаптив для мобилки */
+@media (max-width: 768px) {
+  .page-layout {
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
   }
-  
-  .about-text {
-    flex: 1 1 50%;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-  .about-text p {
-    margin-bottom: 15px;
-  }
-  
-  .about-image {
-    flex: 1 1 40%;
+
+  .fixed-left-title {
+    position: static;
+    transform: none;
     text-align: center;
+    margin-bottom: 20px;
   }
-  
-  .about-image img {
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  }
-  
+
   .page-title {
-    font-size: 36px;
-    margin-bottom: 40px;
+    font-size: 24px;
     text-align: center;
-    color: #e0c066;
   }
-  
+
+  .about-content {
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .about-section {
+    padding: 60px 0;
+  }
+}
+

@@ -1,214 +1,647 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Товары для ухода | Head Line</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="products.style.css">
-  <link rel="stylesheet" href="footer.style.css" />
-  <script src="modal.js"></script>
-</head>
-<body>
-
-  <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/logo.svg" alt="Head Line" />
-        </a>
-      </div>
-
-      <!-- Только для мобильной версии -->
-      <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="index.html">Главная</a></li>
-  
-          <li class="dropdown">
-            <a href="index.html#services">Услуги ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="mens.html">Мужские услуги</a></li>
-              <!--<li><a href="womens.html">Женские услуги</a></li>-->
-              <li><a href="combo.html">Комплексные</a></li>
-              <li><a href="products.html">Товары для ухода</a></li>
-              
-            </ul>
-          <li><a href="training.html">Обучение</a></li>
-          </li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="reviews.html">Отзывы</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Контент -->
-  <section class="page-section">
-    <div class="container page-layout">
-      <div class="fixed-left-title">
-      <h1 class="page-title">Товары<br>для ухода</h1>
-      </div>
-
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="images/wax.jpg" alt="Воск для укладки">
-          <h3>Воск для укладки</h3>
-          <p class="price">650 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/oil.jpg" alt="Масло для бороды">
-          <h3>Масло для бороды</h3>
-          <p class="price">800 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
-          <h3>Шампунь для мужчин</h3>
-          <p class="price">550 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
-          <h3>Шампунь для мужчин</h3>
-          <p class="price">550 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
-          <h3>Шампунь для мужчин</h3>
-          <p class="price">550 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
-          <h3>Шампунь для мужчин</h3>
-          <p class="price">550 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
-          <h3>Шампунь для мужчин</h3>
-          <p class="price">550 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/shampoo.jpg" alt="Шампунь для мужчин">
-          <h3>Шампунь для мужчин</h3>
-          <p class="price">550 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-
-        <div class="product-card">
-          <img src="images/balm.jpg" alt="Бальзам для бороды">
-          <h3>Бальзам для бороды</h3>
-          <p class="price">700 ₽</p>
-          <a href="#" class="btn-buy">Купить</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Модальное окно КУПИТЬ ТОВАР -->
-  <div class="modal" id="buyModal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeBuy">&times;</span>
-      <h2>Оформление заказа</h2>
-      <p id="selectedProduct" style="margin-bottom: 20px; font-weight: bold; color: #e0c066;"></p>
-      <form id="buyForm">
-        <input type="text" id="userName" placeholder="Ваше имя" required>
-        <input type="tel" id="userPhone" placeholder="Телефон" required>
-        <input type="number" id="userQty" min="1" value="1" placeholder="Количество" required>
-        <button type="submit">Оформить заказ</button>
-      </form>    
-    </div>
-  </div>
-
-  <!-- Модальное окно УСПЕШНОЙ ПОКУПКИ -->
-  <div class="modal" id="buySuccess" style="display: none;">
-    <div class="modal-content" style="text-align: center;">
-      <span class="close-btn" id="closeBuySuccess">&times;</span>
-      <div class="checkmark" style="font-size: 50px; color: #31c48d; margin-bottom: 15px;">&#10004;</div>
-      <h2>Спасибо!</h2>
-      <p>Ваш заказ успешно оформлен.</p>
-    </div>
-  </div>
-  <script src="buy.js"></script>
-  
-  <!-- Подвал сайта -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="footer-top">
-      
-      <!-- Левая колонка: Лого и соцсети -->
-      <div class="footer-column">
-        <div class="footer-left-inner">
-          <div class="footer-logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Товары для ухода | Head Line</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="products.style.css" />
+    <link rel="stylesheet" href="footer.style.css" />
+    <script src="modal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+  </head>
+  <body>
+    <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
             <img src="images/logo.svg" alt="Head Line" />
+          </a>
+        </div>
+
+        <!-- Только для мобильной версии -->
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+
+            <li class="dropdown">
+              <a href="index.html#services">Услуги ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="mens.html">Мужские услуги</a></li>
+                <!--<li><a href="womens.html">Женские услуги</a></li>-->
+                <li><a href="combo.html">Комплексные</a></li>
+                <li><a href="products.html">Товары для ухода</a></li>
+              </ul>
+            </li>
+            <li><a href="training.html">Обучение</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Контент -->
+    <section class="page-section">
+      <div class="container page-layout">
+        <div class="fixed-left-title">
+          <h1 class="page-title">Товары<br />для ухода</h1>
+        </div>
+
+        <div class="product-grid">
+          <div
+            class="product-card"
+            data-title="Антибактериальное мыло Morgan's"
+            data-price="500 ₽"
+            data-description="Антибактериальное мыло глубоко очищает кожу и обеспечивает длительную защиту от микробов. Подходит для кожи лица, успокаивает воспаления, помогает предотвратить кожные инфекции и акне. Ежедневное использование обеспечит чистую здоровую кожу."
+            data-volume="80 грамм"
+            data-usage="Намочите мыло под проточной водой. Вспеньте в руках и нанесите получившуюся пенку на кожу. Если используете как средство для умывания, то нанесите пену на лицо массажными движениями. В конце смойте остатки чистой водой, а брусочек положите сушиться в мыльницу."
+            data-image="images/products/Morgans_soap.jpg"
+          >
+            <img
+              src="images/products/Morgans_soap.jpg"
+              alt="Антибактериальное мыло Morgan's"
+            />
+            <h3>Антибактериальное мыло Morgan's</h3>
+            <p class="price">500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
           </div>
-          <div class="footer-socials">
-            <a href="https://vk.com/headlinespb" target="_blank" aria-label="VK">
-              <img src="images/vk.png" alt="VK" />
-            </a>
-            <a href="https://wa.me/79219342307" target="_blank" aria-label="WhatsApp">
-              <img src="images/whatsapp.png" alt="WhatsApp" />
-            </a>
-            <a href="https://yandex.ru/profile/67905101910?lang=ru" target="_blank" aria-label="Yandex Maps">
-              <img src="images/yandex.png" alt="Yandex Maps" />
-            </a>
-            <a href="https://2gis.ru/spb/firm/70000001089604614/" target="_blank" aria-label="2GIS">
-              <img src="images/2gis.png" alt="2GIS" />
-            </a>
+
+          <div
+            class="product-card"
+            data-title="Восстанавливающий шампунь с кератином Morgan's"
+            data-price="4000 ₽"
+            data-description="Профессиональный шампунь для слабых, поврежденных или окрашенных волос. Главный действующий компонент—экстракт алоэ вера, помогает поддерживать необходимый уровень влажности и насыщает кожу полезными минералами. В составе также пантенол, кератин, аминокислоты и кондиционирующие полимеры."
+            data-volume="1000 мл."
+            data-usage="Нанести шампунь на влажные волосы, и, образовать густую пену. Массировать голову в течение 1-2 минут, затем смыть средство. Избегать попадания в глаза."
+            data-image="images/products/Restorative_shampoo_with_keratin.jpg"
+          >
+            <img
+              src="images/products/Restorative_shampoo_with_keratin.jpg"
+              alt="Восстанавливающий шампунь с кератином Morgan's 1 литр"
+            />
+            <h3>Восстанавливающий шампунь с кератином Morgan's 1000 мл.</h3>
+            <p class="price">4000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Матовая паста для укладки Morgans Matt Paste 75 мл."
+            data-price="1500 ₽"
+            data-description="Матовая паста для укладки волос со средней силой фиксации и матовым финишем. Подходит для создания естественных объемных укладок без жирного блеска. Легко наносится благодаря кремовой текстуре. Разработан на водной основе, легко смывается с волос и не утяжеляет их. Средство не пересушивает кожу головы и не ослабляет структуру волос. Обладает фирменным ароматом бренда с нотками бергамота, жасмина, сандала и пачули."
+            data-volume="75 мл."
+            data-usage="Разомнуть небольшое количество пасты кончиками пальцев, нанести на влажные волосы у корней и равномерно распределить по всей длине, затем уложить волосы с помощью фена и расчески."
+            data-image="images/products/Morgans_Matt_Paste_75_ml.jpg"
+          >
+            <img
+              src="images/products/Morgans_Matt_Paste_75_ml.jpg"
+              alt="Матовая паста для укладки Morgans Matt Paste 75 мл"
+            />
+            <h3>Матовая паста для укладки Morgans Matt Paste 75 мл.</h3>
+            <p class="price">1500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Текстурирующая глина для укладки волос Morgans Texture Clay 75 мл."
+            data-price="1500 ₽"
+            data-description="Глина для укладки волос с сильной фиксацией и матовым эффектом — для формирования текстурированных причесок. Подходит для стайлинга густых, жестких и непослушных волос. Содержит натуральный пчелиный воск, каолин, кератин и ланолин. Фирменный аромат MORGAN’S — бергамот, жасмин, сандал и пачули."
+            data-volume="75 мл."
+            data-usage="Растереть небольшое количество глины в ладонях, провести по волосам для равномерного распределения, сформировать желаемую укладку. Матовый эффект достигается при нанесении на сухие волосы, а если нанести на влажные волосы и просушить феном, то растаявшая глина даст глянцевый эффект."
+            data-image="images/products/Morgans_Texture_Clay_75_ml.jpg"
+          >
+            <img
+              src="images/products/Morgans_Texture_Clay_75_ml.jpg"
+              alt="Текстурирующая глина для укладки волос Morgans Texture Clay 75 мл."
+            />
+            <h3>
+              Текстурирующая глина для укладки волос Morgans Texture Clay 75 мл
+            </h3>
+            <p class="price">1500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Шампунь для ежедневного использования Morgan's"
+            data-price="4000 ₽"
+            data-description="Профессиональный шампунь, разработан специально для нормальных волос. Cодержит экстракт алоэ вера и гидролизованный кератин для увлажнения и придания блеска волосам. С нашим фирменным ароматом бергамота, жасмина, сандала и пачули."
+            data-volume="1000 мл."
+            data-usage="Нанести шампунь на влажные волосы, и, образовать густую пену. Массировать голову в течение 1-2 минут, затем смыть средство. Избегать попадания в глаза."
+            data-image="images/products/Shampoo_for_daily_use_Morgans.jpg"
+          >
+            <img
+              src="images/products/Shampoo_for_daily_use_Morgans.jpg"
+              alt="Шампунь для ежедневного использования Morgan's 1 литр"
+            />
+            <h3>Шампунь для ежедневного использования Morgan's 1000 мл.</h3>
+            <p class="price">4000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Шампунь для ежедневного использования Morgan's"
+            data-price="2000 ₽"
+            data-description="Профессиональный шампунь, разработан специально для нормальных волос. Cодержит экстракт алоэ вера и гидролизованный кератин для увлажнения и придания блеска волосам. С нашим фирменным ароматом бергамота, жасмина, сандала и пачули."
+            data-volume="250 мл."
+            data-usage="Нанести шампунь на влажные волосы, и, образовать густую пену. Массировать голову в течение 1-2 минут, затем смыть средство. Избегать попадания в глаза."
+            data-image="images/products/Shampoo_for_daily_use_Morgans_250_ml.jpg"
+          >
+            <img
+              src="images/products/Shampoo_for_daily_use_Morgans_250_ml.jpg"
+              alt="Шампунь для ежедневного использования Morgan's 250 мл."
+            />
+            <h3>Шампунь для ежедневного использования Morgan's 250 мл.</h3>
+            <p class="price">2000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Шампунь для ежедневного использования Morgan's Bay Rum"
+            data-price="4000 ₽"
+            data-description="Шампунь, который обеспечивает интенсивное увлажнение, блеск и жизненную силу ваших волос. В состав входят алоэ вера, кератиновые аминокислоты, пантенол и аромат лаврового рома. Увлажнение и очищение. Придает блеск и жизненную силу С натуральным ароматом алоэ вера и рома. Подходит для всех типов волос."
+            data-volume="1000 мл."
+            data-usage="Тщательно намочите волосы. Нанесите большое количество шампуня на кожу головы и волосы. Сосредоточьтесь на корнях и кончиках для тщательной очистки. Тщательно смойте и повторите по мере необходимости. Избегайте попадания в глаза."
+            data-image="images/products/Morgans_Bay_Rum_250_ml.jpg"
+          >
+            <img
+              src="images/products/Morgans_Bay_Rum_250_ml.jpg"
+              alt="Шампунь для ежедневного использования Morgan's Bay Rum 1 литр"
+            />
+            <h3>
+              Шампунь для ежедневного использования Morgan's Bay Rum 1000 мл.
+            </h3>
+            <p class="price">4000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Шампунь для ежедневного использования Morgan's Bay Rum"
+            data-price="2000 ₽"
+            data-description="Шампунь, который обеспечивает интенсивное увлажнение, блеск и жизненную силу ваших волос. В состав входят алоэ вера, кератиновые аминокислоты, пантенол и аромат лаврового рома. Увлажнение и очищение. Придает блеск и жизненную силу С натуральным ароматом алоэ вера и рома. Подходит для всех типов волос."
+            data-volume="250 мл."
+            data-usage="Тщательно намочите волосы. Нанесите большое количество шампуня на кожу головы и волосы. Сосредоточьтесь на корнях и кончиках для тщательной очистки. Тщательно смойте и повторите по мере необходимости. Избегайте попадания в глаза."
+            data-image="images/products/Morgans_Bay_Rum_250_ml.jpg"
+          >
+            <img
+              src="images/products/Morgans_Bay_Rum_250_ml.jpg"
+              alt="Шампунь для ежедневного использования Morgan's Bay Rum 250 мл."
+            />
+            <h3>
+              Шампунь для ежедневного использования Morgan's Bay Rum 250 мл.
+            </h3>
+            <p class="price">2000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Шампунь для ежедневного использования Morgan's Oudh 1000 мл."
+            data-price="4000 ₽"
+            data-description="Шампунь создан специально для мужской шевелюры с учетом всех ее потребностей. Универсальная формула одинаково хорошо подойдет волосам любого типа, обеспечит деликатное очищение и базовый уход. Средство также питает и увлажняет кожу головы, предотвращая целый ряд проблем. В списке активных компонентов значатся аминокислоты кератина, сок алоэ вера и лимонная кислота. Работая вместе, они помогают очистить эпидермис от отмерших клеток, привести в норму выработку кожного жира, насытить локоны влагой до самых корней и сделать их более послушными."
+            data-volume="1000 мл."
+            data-usage="Нанесите средство на влажные волосы и хорошенько вспеньте массирующими движениями. Не забудьте уделить внимание корням и кончикам волос.
+            Подождав 1-2 минуты, тщательно промойте голову. При необходимости повторите процедуру. Избегайте попадания в глаза."
+            data-image="images/products/Morgans_Oudh_250_ml.jpg"
+          >
+            <img
+              src="images/products/Morgans_Oudh_250_ml.jpg"
+              alt="Шампунь для ежедневного использования Morgan's Oudh 1 литр"
+            />
+            <h3>
+              Шампунь для ежедневного использования Morgan's Oudh 1000 мл.
+            </h3>
+            <p class="price">4000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Шампунь для ежедневного использования Morgan's Oudh 250 мл"
+            data-price="2000 ₽"
+            data-description="Шампунь создан специально для мужской шевелюры с учетом всех ее потребностей. Универсальная формула одинаково хорошо подойдет волосам любого типа, обеспечит деликатное очищение и базовый уход. Средство также питает и увлажняет кожу головы, предотвращая целый ряд проблем. В списке активных компонентов значатся аминокислоты кератина, сок алоэ вера и лимонная кислота. Работая вместе, они помогают очистить эпидермис от отмерших клеток, привести в норму выработку кожного жира, насытить локоны влагой до самых корней и сделать их более послушными."
+            data-volume="250 мл."
+            data-usage="Нанесите средство на влажные волосы и хорошенько вспеньте массирующими движениями. Не забудьте уделить внимание корням и кончикам волос.
+            Подождав 1-2 минуты, тщательно промойте голову. При необходимости повторите процедуру. Избегайте попадания в глаза."
+            data-image="images/products/Morgans_Oudh_250_ml.jpg"
+          >
+            <img
+              src="images/products/Morgans_Oudh_250_ml.jpg"
+              alt="Шампунь для ежедневного использования Morgan's Oudh 250 мл"
+            />
+            <h3>Шампунь для ежедневного использования Morgan's Oudh 250 мл</h3>
+            <p class="price">2000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Шампунь против перхоти Morgan's"
+            data-price="4000 ₽"
+            data-description="Профессиональный шампунь, регулирующий и восстанавливающий микрофлору головы. Способствует нейтрализации процесса образования перхоти, снимает зуд и раздражение. Формула шампуня не пересушивает дерму, а напротив, питает и увлажняет, препятствуя появлению себореи. Для достижения максимальных результатов, рекомендуется к применению на постоянной основе."
+            data-volume="1000 мл."
+            data-usage="Нанести шампунь на влажные волосы, и, образовать густую пену. Массировать голову в течение 1-2 минут, затем смыть средство. Избегать попадания в глаза."
+            data-image="images/products/Anti-dandruff_shampoo_Morgans.jpg"
+          >
+            <img
+              src="images/products/Anti-dandruff_shampoo_Morgans.jpg"
+              alt="Шампунь против перхоти Morgan's 1 литр"
+            />
+            <h3>Шампунь против перхоти Morgan's 1000 мл.</h3>
+            <p class="price">4000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Шампунь против перхоти Morgan's 250 мл."
+            data-price="2000 ₽"
+            data-description="Профессиональный шампунь, регулирующий и восстанавливающий микрофлору головы. Способствует нейтрализации процесса образования перхоти, снимает зуд и раздражение. Формула шампуня не пересушивает дерму, а напротив, питает и увлажняет, препятствуя появлению себореи. Для достижения максимальных результатов, рекомендуется к применению на постоянной основе."
+            data-volume="250 мл."
+            data-usage="Нанести шампунь на влажные волосы, и, образовать густую пену. Массировать голову в течение 1-2 минут, затем смыть средство. Избегать попадания в глаза."
+            data-image="images/products/Morgan's Anti-Dandruff Shampoo 250 ml.jpg"
+          >
+            <img
+              src="images/products/Morgan's Anti-Dandruff Shampoo 250 ml.jpg"
+              alt="Шампунь против перхоти Morgan's 250 мл."
+            />
+            <h3>Шампунь против перхоти Morgan's 250 мл.</h3>
+            <p class="price">2000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Глина для укладки волос London Grooming Clay (100 мл.)"
+            data-price="3400 ₽"
+            data-description="Глина для укладки волос — универсальный продукт с плотной текстурой и сильной фиксацией. Она создаёт матовый эффект без блеска, позволяет чётко контролировать укладку и придаёт объём. Основанная на воде, глина легко смывается шампунем или водой."
+            data-volume="100 мл."
+            data-usage="Распределите средство равномерно от корней до кончиков, затем высушите волосы, придав им нужную форму. Можно применять как на сухих, так и на влажных волосах. Для лёгкого блеска наносите глину на сухие волосы, учитывая её сильную фиксацию, а для выраженного объёма — на влажные."
+            data-image="images/products/London_Grooming_Clay_100_ml.jpg"
+          >
+            <img
+              src="images/products/London_Grooming_Clay_100_ml.jpg"
+              alt="Глина для укладки волос London Grooming Clay (100 мл.)"
+            />
+            <h3>Глина для укладки волос London Grooming Clay (100 мл.)</h3>
+            <p class="price">3400 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Паста для укладки волос London Grooming Paste (100 мл.)"
+            data-price="3400 ₽"
+            data-description="Паста сильной фиксации London Grooming придает текстуру и четкость укладке, оставляя естественный финиш на волосах. Данное средство отлично подходит для создания легкого небрежного образа как в повседневной жизни, так и для особых случаев. Несмотря на сильную фиксацию, паста позволяет обновлять укладку в течение дня, не утяжеляя волосы.
+             Стайлинг может использоваться как предукладочное средство, а также он отлично работает в паре с солью для укладки волос или матовым спреем."
+            data-volume="100 мл."
+            data-usage="Пасту можно использовать как на мокрых волосах, так и на сухих. Возьмите небольшое количество продукта размером с горошину, разотрите в ладонях и на пальцах, чтобы слегка согреть средство, затем равномерно распределите его по волосам и создайте желаемую укладку."
+            data-image="images/products/London_Grooming_Paste _100_ml.jpg"
+          >
+            <img
+              src="images/products/London_Grooming_Paste _100_ml.jpg"
+              alt="Паста для укладки волос London Grooming Paste (100 мл.)"
+            />
+            <h3>Паста для укладки волос London Grooming Paste (100 мл.)</h3>
+            <p class="price">3400 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Помада для укладки волос London Grooming Pomade (100 мл.)"
+            data-price="3400 ₽"
+            data-description="Современный бриолин (помада) на водной основе сочетает классическую фиксацию, блеск и объём с удобством в использовании — он легко смывается водой или шампунем. Идеален для создания стойкой укладки в стиле ретро или современного образа."
+            data-volume="100 мл."
+            data-usage="Небольшое количество средства растереть в ладонях и равномерно нанести на волосы, придавая им нужную форму."
+            data-image="images/products/London_Grooming_Pomade_100 ml.jpg"
+          >
+            <img
+              src="images/products/London_Grooming_Pomade_100 ml.jpg"
+              alt="Помада для укладки волос London Grooming Pomade (100 мл.)"
+            />
+            <h3>Помада для укладки волос London Grooming Pomade (100 мл.)</h3>
+            <p class="price">3400 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Структурирующая паста London Grooming Define (100 мл.)"
+            data-price="3400 ₽"
+            data-description="Структурирующая паста Define имеет мягкую текстуру. Обеспечивает возможность обновлять укладку в течении дня, даже при сильной фиксации.Это средство для укладки на водной основе позволяет добиться контроля над укладкой, не смотря на сильную фиксацию. Define обладает лёгким естественным блеском. Легко смывается."
+            data-volume="100 мл."
+            data-usage="Равномерно нанесите небольшое количество средства на сухие или влажные волосы и придайте волосам желаемую форму."
+            data-image="images/products/London_Grooming_Define_Structuring_Paste_100_ml.jpg"
+          >
+            <img
+              src="images/products/London_Grooming_Define_Structuring_Paste_100_ml.jpg"
+              alt="Структурирующая паста London Grooming Define (100 мл.)"
+            />
+            <h3>Структурирующая паста London Grooming Define (100 мл.)</h3>
+            <p class="price">3400 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Пудра для создания объема London Grooming (20 гр.)"
+            data-price="3500 ₽"
+            data-description="Пудра является незаменимым средством при создании объема на коротких и средних волосах. Она эффективно фиксирует созданный объем и удерживает его в течение всего дня, сохраняя при этом подвижность текстуры укладки. У продукта удобный распылитель, который позволяет равномерно и экономично распределить пудру на волосах."
+            data-volume="20 гр."
+            data-usage="Нанести на сухие волосы, слегка посыпав пудрой у корней для увеличения и объема, или равномерно распределить по всей поверхности для дополнительной пухлости и текстуры.             "
+            data-image="images/products/London_Grooming_Volumizing_Powder_20_g.jpg"
+          >
+            <img
+              src="images/products/London_Grooming_Volumizing_Powder_20_g.jpg"
+              alt="Пудра для создания объема London Grooming (20 гр.)"
+            />
+            <h3>Пудра для создания объема London Grooming (20 гр.)</h3>
+            <p class="price">3500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Спрей для укладки волос London Grooming Морская соль (250 мл.)"
+            data-price="4000 ₽"
+            data-description="Спрей позволяет создать эффект немного влажных волос, будто вы только что вернулись с пляжа. Создаёт беспорядочный внешний вид контролируемой небрежности. При этом, средство придаёт объём волосам, создаёт нужную форму и эффективно удерживает её в течении длительного периода времени. Можно использовать как предукладочное средство для создания объёма перед глиной, пастой и кремом."
+            data-volume="250 мл."
+            data-usage="Распылите спрей на подсушенные полотенцем волосы, стараясь равномерно распределить его. Чтобы волосы выглядели растрепанными, дайте им высохнуть естественным путем после нанесения спрея. Кроме того, вы можете высушить волосы феном для придания им объема и текстуры."
+            data-image="images/products/London_Grooming_Sea_Salt_Hair_Styling_Spray_250_ml.jpg"
+          >
+            <img
+              src="images/products/London_Grooming_Sea_Salt_Hair_Styling_Spray_250_ml.jpg"
+              alt="Спрей для укладки волос London Grooming Морская соль (250 мл.)"
+            />
+            <h3>
+              Спрей для укладки волос London Grooming Морская соль (250 мл.)
+            </h3>
+            <p class="price">4000 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Масло для бороды Solomon's Black Pepper (30 мл.)"
+            data-price="4500 ₽"
+            data-description="Масло для бороды «Черный перец» от Solomon's Beard Oil – это натуральное ухаживающее масло, созданное специально для ухода за бородой. Оно содержит масла черного перца, которые помогают укрепить и ухаживать за волосами бороды, а также увлажняют кожу лица."
+            data-volume="30 мл."
+            data-usage="Нанесите несколько капель масла на ладони. Равномерно распределите масло по всей длине бороды, массируя кожу лица. Используйте ежедневно или по необходимости для ухода за бородой."
+            data-image="images/products/Black_Pepper_30_ml.jpg"
+          >
+            <img
+              src="images/products/Black_Pepper_30_ml.jpg"
+              alt="Масло для бороды Solomon's Black Pepper (30 мл.)"
+            />
+            <h3>Масло для бороды Solomon's Black Pepper (30 мл.)</h3>
+            <p class="price">4500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Масло для бороды Solomon's Vanilla and Wood (30 мл.)"
+            data-price="4500 ₽"
+            data-description="Масло для бороды «Ваниль и дерево» от Solomon's Beard смягчает, увлажняет и ухаживает за бородой, устраняя зуд и шелушение кожи. Благодаря натуральному составу и аромату ванили с древесными нотами, делает бороду ухоженной, послушной и приятно пахнущей. Подходит для ежедневного использования и любого типа бороды."
+            data-volume="30 мл."
+            data-usage="Нанесите несколько капель масла на ладони, разотрите и равномерно распределите по всей бороде. Для достижения наилучших результатов используйте масло ежедневно или по мере необходимости."
+            data-image="images/products/Vanilla_and_Wood_30_ml.jpg"
+          >
+            <img
+              src="images/products/Vanilla_and_Wood_30_ml.jpg"
+              alt="Масло для бороды Solomon's Vanilla and Wood (30 мл.)"
+            />
+            <h3>Масло для бороды Solomon's Vanilla and Wood (30 мл.)</h3>
+            <p class="price">4500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Масло для бороды Solomon's Japanese Sandal (30 мл.)"
+            data-price="4500 ₽"
+            data-description="Масло для бороды «Японское сандаловое дерево» включает в свой состав уникальное масло древесины сандалового дерева, которое произрастает только в ограниченном количестве заповедников Японии."
+            data-volume="30 мл."
+            data-usage="Небольшое количество масла нанести на чистую, сухую бороду и кожу лица. Равномерно распределить по всей длине бороды, уделяя особое внимание коже. Можно использовать ежедневно или по мере необходимости."
+            data-image="images/products/Japanese_Sandal_30_ml.jpg"
+          >
+            <img
+              src="images/products/Japanese_Sandal_30_ml.jpg"
+              alt="Масло для бороды Solomon's Japanese Sandal (30 мл.)"
+            />
+            <h3>Масло для бороды Solomon's Japanese Sandal (30 мл.)</h3>
+            <p class="price">4500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Мыло для бороды Solomon's Black Pepper (100 мл.)"
+            data-price="4500 ₽"
+            data-description="Мыло для бороды «Чёрный перец» не только очищает, но также служит отличным скрабом, удаляя мертвые клетки кожи, насыщая ее кислородом и стимулируя кровообращение. Кроме того, данное мыло обладает тонизирующим, противовоспалительным и восстанавливающим эффектом, придавая коже мягкость и обеспечивая глубокое очищение."
+            data-volume="100 мл."
+            data-usage="Намочите бороду теплой водой, нанесите небольшое количество мыла и массируйте волосы и кожу под бородой. Затем тщательно смойте водой. Для достижения наилучших результатов рекомендуется использовать мыло регулярно, например, несколько раз в неделю или по мере необходимости."
+            data-image="images/products/Black_Pepper_100_ml.jpg"
+          >
+            <img
+              src="images/products/Black_Pepper_100_ml.jpg"
+              alt="Мыло для бороды Solomon's Black Pepper (100 мл.)"
+            />
+            <h3>Мыло для бороды Solomon's Black Pepper (100 мл.)</h3>
+            <p class="price">4500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Мыло для бороды Solomon's Japanese Sandal (100 мл.)"
+            data-price="4500 ₽"
+            data-description="Мыло для бороды «Японское сандаловое дерево» эффективно очищает, увлажняет и восстанавливает бороду, придавая ей мягкость и здоровый вид. В состав входят натуральные компоненты: экстракт японского сандала, масло чайного дерева и мёд, которые питают волосы, успокаивают кожу и защищают от внешних воздействий. Идеально для ежедневного ухода."
+            data-volume="100 мл."
+            data-usage="При помощи дозатора, нанесите немного мыла на влажную бороду или усы. Вспеньте. Массирующими движениями помойте волосы, после чего смойте мыло теплой водой."
+            data-image="images/products/Japanese_Sandal_100_ml.jpg"
+          >
+            <img
+              src="images/products/Japanese_Sandal_100_ml.jpg"
+              alt="Мыло для бороды Solomon's Japanese Sandal (100 мл.)"
+            />
+            <h3>Мыло для бороды Solomon's Japanese Sandal (100 мл.)</h3>
+            <p class="price">4500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
+          </div>
+
+          <div
+            class="product-card"
+            data-title="Мыло для бороды Solomon's Papaya and Cupacu (100мл.)"
+            data-price="4500 ₽"
+            data-description="Мыло для ухода за бородой «Папайя и купачу» обладает уникальным составом, который придает коже и бороде pдоровый вид. Натуральная папайя, богатая витаминами, увлажняет и интенсивно питает бороду. Купачу, фрукт из тропических лесов Азии, является природным антиоксидантом, который защищает кожу и бороду от негативных воздействий свободных радикалов, которые могут привести к преждевременному старению кожи."
+            data-volume="100 мл."
+            data-usage="При помощи дозатора, нанесите немного мыла на влажную бороду или усы. Вспеньте. Массирующими движениями помойте волосы, после чего смойте мыло теплой водой."
+            data-image="images/products/Papaya_and_Cupacu_100_ml.jpg"
+          >
+            <img
+              src="images/products/Papaya_and_Cupacu_100_ml.jpg"
+              alt="Мыло для бороды Solomon's Papaya and Cupacu (100мл.)"
+            />
+            <h3>Мыло для бороды Solomon's Papaya and Cupacu (100мл.)</h3>
+            <p class="price">4500 ₽</p>
+            <a href="#" class="btn-buy">Узнать подробнее</a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Центр: Навигация -->
-      <div class="footer-column footer-nav">
-        <a href="index.html">Главная</a>
-        <a href="mens.html">Услуги</a>
-        <a href="training.html">Обучение</a>
-        <a href="contacts.html">Контакты</a>
+    <!-- Модальное окно -->
+    <div class="modal" id="bookingModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h2>Запись на услугу</h2>
+        <form>
+          <input type="text" placeholder="Ваше имя" required />
+          <input type="tel" placeholder="Телефон" required />
+          <textarea placeholder="Комментарий (необязательно)"></textarea>
+          <button type="submit">Отправить заявку</button>
+          <p
+            id="formError"
+            style="color: red; text-align: center; display: none"
+          >
+            Ошибка: заполните все поля корректно.
+          </p>
+        </form>
       </div>
-
-      <!-- Правая колонка: Контакты -->
-      <div class="footer-column footer-info">
-        <p><strong>Телефон:</strong> <a href="tel:+79219342307">+7 (921) 934-23-07</a></p>
-        <p><strong>Email:</strong> <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a></p>
-        <p><strong>Адрес:</strong> г. Санкт-Петербург,<br>ул. Рузовская, д. 13</p>
-      </div>
-      
     </div>
 
-    <!-- Низ футера -->
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        <a href="privacy.html">Политика обработки персональных данных</a>
-        <a href="terms.html">Пользовательское соглашение и политика конфиденциальности</a>
+    <!-- Модальное подтверждение -->
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeSuccess">&times;</span>
+        <div class="checkmark">&#10004;</div>
+        <h2>Спасибо!</h2>
+        <p>Ваша заявка успешно отправлена.</p>
       </div>
-      <p class="copyright">© 2025 Head Line. Все права защищены.</p>
     </div>
 
-  </div>
-</footer>
+    <!-- Модальное окно с описанием товара -->
+    <div class="modal" id="productModal">
+      <div class="product-modal-content">
+        <span class="close-btn" id="closeProductModal">&times;</span>
+        <div class="product-modal-wrapper">
+          <div class="product-modal-image">
+            <img id="modalProductImage" src="" alt="" />
+          </div>
+          <div class="product-modal-details">
+            <h2 id="modalProductTitle">Название товара</h2>
+            <p class="product-price" id="modalProductPrice">Цена</p>
+            <p id="modalProductDesc">Описание</p>
+            <p>
+              <strong>Объём:</strong> <span id="modalProductVolume">---</span>
+            </p>
+            <p>
+              <strong>Способ применения:</strong><br /><span
+                id="modalProductUsage"
+                >---</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <script src="buy.js"></script>
 
-</body>
+    <!-- Подвал сайта -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <!-- Левая колонка: Лого и соцсети -->
+          <div class="footer-column">
+            <div class="footer-left-inner">
+              <div class="footer-logo">
+                <img src="images/logo-footer.svg" alt="Head Line" />
+              </div>
+              <div class="footer-socials">
+                <a
+                  href="https://vk.com/headlinespb"
+                  target="_blank"
+                  aria-label="VK"
+                >
+                  <img src="images/vk.png" alt="VK" />
+                </a>
+                <a
+                  href="https://wa.me/79219342307"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <img src="images/whatsapp.png" alt="WhatsApp" />
+                </a>
+                <a
+                  href="https://yandex.ru/profile/67905101910?lang=ru"
+                  target="_blank"
+                  aria-label="Yandex Maps"
+                >
+                  <img src="images/yandex.png" alt="Yandex Maps" />
+                </a>
+                <a
+                  href="https://2gis.ru/spb/firm/70000001089604614/"
+                  target="_blank"
+                  aria-label="2GIS"
+                >
+                  <img src="images/2gis.png" alt="2GIS" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Центр: Навигация -->
+          <div class="footer-column footer-nav">
+            <a href="index.html">Главная</a>
+            <a href="index.html#services">Услуги</a>
+            <a href="training.html">Обучение</a>
+            <a href="contacts.html">Контакты</a>
+          </div>
+
+          <!-- Правая колонка: Контакты -->
+          <div class="footer-column footer-info">
+            <p>
+              <strong>Телефон:</strong>
+              <a href="tel:+79219342307">+7 (921) 934-23-07</a>
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a>
+            </p>
+            <p>
+              <strong>Адрес:</strong> г. Санкт-Петербург,<br />ул. Рузовская, д.
+              13
+            </p>
+          </div>
+        </div>
+
+        <!-- Низ футера -->
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="privacy.html">Политика обработки персональных данных</a>
+            <a href="terms.html"
+              >Пользовательское соглашение и политика конфиденциальности</a
+            >
+          </div>
+          <p class="copyright">© 2025 Head Line. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
-

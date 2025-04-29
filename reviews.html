@@ -1,126 +1,149 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Head Line</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="reviews.style.css" />
-  <link rel="stylesheet" href="footer.style.css" />
-  <script src="modal.js"></script>
-</head>
-<body>
-  
-  <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/logo.svg" alt="Head Line" />
-        </a>
-      </div>
-  
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="index.html">Главная</a></li>
-  
-          <li class="dropdown">
-            <a href="index.html#services">Услуги ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="mens.html">Мужские услуги</a></li>
-              <li><a href="combo.html">Комплексные</a></li>
-              <li><a href="products.html">Товары для ухода</a></li>
-              
-            </ul>
-          <li><a href="training.html">Обучение</a></li>
-          </li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="reviews.html">Отзывы</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Контент -->
-  <section class="page-section">
-    <div class="container">
-      <div class="fixed-title-container">
-        <h1 class="page-title">Отзывы наших<br>клиентов</h1>
-      </div>
-  
-      <div class="reviews-iframe-wrapper">
-        <iframe
-          src="https://yandex.ru/maps-reviews-widget/67905101910?comments"
-          style="border:1px solid #e6e6e6; border-radius:12px;"
-          loading="lazy"
-        ></iframe>
-        <a href="https://yandex.ru/maps/org/head_line/67905101910/"
-           target="_blank"
-           class="yandex-link">
-           Head Line на карте Санкт‑Петербурга — Яндекс Карты
-        </a>
-      </div>
-    </div>
-  </section>
-
-<!-- Подвал сайта -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="footer-top">
-      
-      <!-- Левая колонка: Лого и соцсети -->
-      <div class="footer-column">
-        <div class="footer-left-inner">
-          <div class="footer-logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head Line</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reviews.style.css" />
+    <link rel="stylesheet" href="footer.style.css" />
+    <script src="modal.js"></script>
+  </head>
+  <body>
+    <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
             <img src="images/logo.svg" alt="Head Line" />
-          </div>
-          <div class="footer-socials">
-            <a href="https://vk.com/headlinespb" target="_blank" aria-label="VK">
-              <img src="images/vk.png" alt="VK" />
-            </a>
-            <a href="https://wa.me/79219342307" target="_blank" aria-label="WhatsApp">
-              <img src="images/whatsapp.png" alt="WhatsApp" />
-            </a>
-            <a href="https://yandex.ru/profile/67905101910?lang=ru" target="_blank" aria-label="Yandex Maps">
-              <img src="images/yandex.png" alt="Yandex Maps" />
-            </a>
-            <a href="https://2gis.ru/spb/firm/70000001089604614/" target="_blank" aria-label="2GIS">
-              <img src="images/2gis.png" alt="2GIS" />
-            </a>
-          </div>
+          </a>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+
+            <li class="dropdown">
+              <a href="index.html#services">Услуги ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="mens.html">Мужские услуги</a></li>
+                <li><a href="combo.html">Комплексные</a></li>
+                <li><a href="products.html">Товары для ухода</a></li>
+              </ul>
+            </li>
+            <li><a href="training.html">Обучение</a></li>
+
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Контент -->
+    <section class="page-section">
+      <div class="container">
+        <div class="fixed-title-container">
+          <h1 class="page-title">Отзывы наших<br />клиентов</h1>
+        </div>
+
+        <div class="reviews-iframe-wrapper">
+          <iframe
+            src="https://yandex.ru/maps-reviews-widget/67905101910?comments"
+            style="border: 1px solid #e6e6e6; border-radius: 12px"
+            loading="lazy"
+          ></iframe>
+          <a
+            href="https://yandex.ru/maps/org/head_line/67905101910/"
+            target="_blank"
+            class="yandex-link"
+          >
+            Head Line на карте Санкт‑Петербурга — Яндекс Карты
+          </a>
         </div>
       </div>
+    </section>
 
-      <!-- Центр: Навигация -->
-      <div class="footer-column footer-nav">
-        <a href="index.html">Главная</a>
-        <a href="mens.html">Услуги</a>
-        <a href="training.html">Обучение</a>
-        <a href="#">Контакты</a>
+    <!-- Подвал сайта -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <!-- Левая колонка: Лого и соцсети -->
+          <div class="footer-column">
+            <div class="footer-left-inner">
+              <div class="footer-logo">
+                <img src="images/logo-footer.svg" alt="Head Line" />
+              </div>
+              <div class="footer-socials">
+                <a
+                  href="https://vk.com/headlinespb"
+                  target="_blank"
+                  aria-label="VK"
+                >
+                  <img src="images/vk.png" alt="VK" />
+                </a>
+                <a
+                  href="https://wa.me/79219342307"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <img src="images/whatsapp.png" alt="WhatsApp" />
+                </a>
+                <a
+                  href="https://yandex.ru/profile/67905101910?lang=ru"
+                  target="_blank"
+                  aria-label="Yandex Maps"
+                >
+                  <img src="images/yandex.png" alt="Yandex Maps" />
+                </a>
+                <a
+                  href="https://2gis.ru/spb/firm/70000001089604614/"
+                  target="_blank"
+                  aria-label="2GIS"
+                >
+                  <img src="images/2gis.png" alt="2GIS" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Центр: Навигация -->
+          <div class="footer-column footer-nav">
+            <a href="index.html">Главная</a>
+            <a href="mens.html">Услуги</a>
+            <a href="training.html">Обучение</a>
+            <a href="#">Контакты</a>
+          </div>
+
+          <!-- Правая колонка: Контакты -->
+          <div class="footer-column footer-info">
+            <p>
+              <strong>Телефон:</strong>
+              <a href="tel:+79219342307">+7 (921) 934-23-07</a>
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a>
+            </p>
+            <p>
+              <strong>Адрес:</strong> г. Санкт-Петербург,<br />ул. Рузовская, д.
+              13
+            </p>
+          </div>
+        </div>
+
+        <!-- Низ футера -->
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="privacy.html">Политика обработки персональных данных</a>
+            <a href="terms.html"
+              >Пользовательское соглашение и политика конфиденциальности</a
+            >
+          </div>
+          <p class="copyright">© 2025 Head Line. Все права защищены.</p>
+        </div>
       </div>
-
-      <!-- Правая колонка: Контакты -->
-      <div class="footer-column footer-info">
-        <p><strong>Телефон:</strong> <a href="tel:+79219342307">+7 (921) 934-23-07</a></p>
-        <p><strong>Email:</strong> <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a></p>
-        <p><strong>Адрес:</strong> г. Санкт-Петербург,<br>ул. Рузовская, д. 13</p>
-      </div>
-      
-    </div>
-
-    <!-- Низ футера -->
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        <a href="privacy.html">Политика обработки персональных данных</a>
-        <a href="terms.html">Пользовательское соглашение и политика конфиденциальности</a>
-      </div>
-      <p class="copyright">© 2025 Head Line. Все права защищены.</p>
-    </div>
-
-  </div>
-</footer>
-
-</body>
+    </footer>
+  </body>
 </html>

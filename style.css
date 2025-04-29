@@ -1,11 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Russo+One&display=swap'); /* шрифты используемые на странице */
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Rubik:wght@400;500;700&family=Russo+One&display=swap');
+ /* шрифты используемые на странице */
 
 body {
   margin: 0;
   font-family: 'Rubik', sans-serif;
   background-color: #f5f5f5;
+  position: relative;
+  z-index: 0;
 }
-  
+
+/* Стили для ПРЕЛОЕДЕРА  с текстом */
+/* Интро-экран (основной контейнер интро — фиксируется на весь экран, чёрный фон, центрирование) */
+#intro-loader {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Плавно убирает интро */
+#intro-loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Полностью скрывает блок интро (через display: none) после fade-out */
+#intro-loader.intro-hidden {
+  display: none;
+}
+
+/* Общий стиль текста, цвет и начальная анимация */
+.intro-text {
+  color: white;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+  font-family: 'Fugaz One', cursive;
+}
+
+.intro-title { 
+  font-family: 'Fugaz One', cursive;
+  font-size: clamp(36px, 7vw, 80px);
+  font-weight: normal;
+  transform: skewX(-5deg);
+  letter-spacing: -0.8px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.intro-text p {
+  font-size: 20px;
+  max-width: 600px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* анимации для плавного появления текста */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* Стиль для Хедера (верхняя навигация, которая есть на каждой странице) */
 .header {
   background-color: #0f0f0f;
@@ -94,16 +176,16 @@ h3,
 .header .nav-list a {
   font-family: 'Russo One', sans-serif;
   letter-spacing: 0.5px;
+  color: #ffffff;
 }
 
 /* плавная прокрутка до блока НАШИ УСЛУГИ */
 html {
   scroll-behavior: smooth;
-  
 }
 
 .logo img {
-  height: 50px;
+  height: 35px;
 }
   
 .nav-list {
@@ -128,20 +210,20 @@ html {
 /* баннер */
 .spinning-banner {
   position: relative;
-  height: 100vh;
+  height: 105vh;
   overflow: hidden;
   background-color: #000; /* чтобы круг сливался с фоном */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .rotating-circle {
   position: absolute;
-  width: 1900px;
-  height: 1900px;
+  width: 1660px;
+  height: 1660px;
   background: url('images/calligraphy-circle.svg') no-repeat center center;
   background-size: contain;
   animation: rotateSlow 80s linear infinite;
@@ -154,6 +236,16 @@ html {
   position: relative;
   z-index: 2;
   color: #fff;
+}
+
+.fugaz { /* оформление заголовка Head Line на баннере */
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: 'Fugaz One', cursive;
+  font-weight: normal;
+  transform: skewX(-10deg); /* наклон вправо */
+  letter-spacing: -0.8px;  /* сокращаю расстояние между буквами без пробела! */
 }
   
 @keyframes rotateSlow {
@@ -173,13 +265,6 @@ html {
   z-index: 1;
   max-width: 800px;
   padding: 20px;
-}
-  
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
   
 .hero p {
@@ -202,63 +287,307 @@ html {
   background-color: #d1b04f;
 }
 
-/* Услуги на главной странице сайта */
-.service-link {
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.3s ease;
+/* Блок "НАШИ УСЛУГИ" на главной странице сайта */
+/* Общий контейнер + фон */
+.services-section {
+  padding: 40px 0;
 }
-  
-.service-link:hover {
-  transform: scale(1.03);
-}
-  
-.service-card {
-background-color: #2a2a2a;
-border-radius: 10px;
-overflow: hidden;
-text-align: center;
-width: 250px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-transition: box-shadow 0.3s ease;
-}
-  
-.service-card:hover {
-  box-shadow: 0 10px 20px rgba(224, 192, 102, 0.4);
-}
-  
-.service-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-  
-.service-card h3 {
-  font-size: 20px;
-  margin: 15px 0;
-  color: #e0c066;
-} 
 
-.services-list {
+.services-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9));
+  z-index: -1;
+}
+
+.services-layout {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  width: 100%;
-}
-
-.services-container {
+  align-items: flex-start;
+  gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 5px 20px;
 }
 
-.section-title {
+/* Левая фиксированная надпись */
+.fixed-left-title {
+  position: sticky;
+  top: 120px;
+  min-width: 200px;
+  align-self: flex-start;
+}
+
+.fixed-left-title .section-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 32px;
+  color: #e0c066;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Список карточек */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+
+/* Оформление карточки (стили для всех сразу) */
+.service-item {
+  display: flex;
+  background: rgba(24, 24, 27, 0.6);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
   text-align: center;
 }
 
-.services {
-  padding: 80px 0;
+.service-item:hover {
+  background: rgba(24, 24, 27, 0.75);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.12), 0 16px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.service-content h3 {
+  font-family: 'Russo One', sans-serif;
+  color: #e0c066;
+  font-size: 22px;
+  margin: 0;
+}
+
+.service-content p {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn-details {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #e0c066;
+  color: #0f0f0f;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+
+.btn-details:hover {
+  background-color: #f1d374;
+}
+
+.section-spacing + .section-spacing::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e0c066, transparent);
+  margin: 40px auto;
+}
+
+/* Блок "Наши работы" */
+/* Общий контейнер для блока "Наши работы" */
+.portfolio-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* Фиксированное положение заголовка */
+.portfolio-section .fixed-left-title {
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+  min-width: 200px;
+}
+
+/* Заголовок */
+.portfolio-section .section-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #e0c066;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.3;
+  text-align: left;
+}
+
+/* Размера изображений в карточках услуг */
+.service-image img {
+  width: 100%;
+  max-height: 500px; /* лучше оставить так, самый оптимальный вариант */
+  object-fit: cover;
+  display: block;
+}
+
+/* Слайдер */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+/* Обёртка всех слайдов */
+.slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Отдельный слайд */
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* Изображение внутри */
+.slide img {
+  max-height: 700px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Стили слайдера */
+.portfolio-section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.portfolio-section .section-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 32px;
+  color: #e0c066;
+}
+
+/* Стрелки слайдера */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background-color: #e0c066;
+  color: #000;
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+/* Стили для блока "Как нас найти" */
+.section-find-us {
+  padding: 40px 0 60px;
+}
+
+.find-us-layout {
+  gap: 60px;
+}
+
+.contacts-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* расстояние между текстом и картой */
+  margin: 0 auto;
+  flex: 1;
+}
+
+.find-us-info {
+  display: flex;
+  text-align: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.find-us-info .info-col {
+  flex: 1;
+  min-width: 200px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.find-us-info a {
+  color: #e0c066;
+  text-decoration: none;
+}
+
+.find-us-info a:hover {
+  text-decoration: underline;
+}
+
+/* Карта */
+.dark-map {
+  width: 900px; /* фиксированная ширина карты */
+  max-width: 100%;
+  height: 500px;
+  border-radius: 12px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Настройки фона для блоков: Наши услуги, Наши работы и Как нас найти */
+.section-background {
+  background-color: #000;
+  position: relative;
+  z-index: 0;
+}
+
+.section-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/fon.svg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.9;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* Модальное окно */
@@ -368,7 +697,7 @@ transition: box-shadow 0.3s ease;
   animation: pop 0.4s ease;
 }
 
-/* Анимация появления зелёной галочки */
+/* Анимация появления зелёной галочки у модального окна */
 @keyframes pop {
   0% {
     transform: scale(0);
@@ -383,115 +712,337 @@ transition: box-shadow 0.3s ease;
   }
 }
 
-
-
-
-/* Сетка курсов */
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+/* Хедер, для мобилки, бургер-меню для */
+.burger {
+  display: none; /* Только на мобилках */
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
 }
 
-/* Карточка курса */
-.course-card {
-  background-color: #2a2a2a;
-  border-radius: 10px;
-  padding: 25px;
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.4s ease;
 }
 
-.course-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 25px rgba(224, 192, 102, 0.4);
+/* Анимация бургер-меню при открытии для мобилки */
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
 }
 
-.course-card h3 {
-  font-size: 20px;
-  color: #e0c066;
-  margin-bottom: 10px;
+.burger.active span:nth-child(2) {
+  opacity: 0;
 }
 
-.course-card p {
-  margin-bottom: 10px;
-  line-height: 1.4;
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-.course-card .price {
-  font-weight: bold;
-  color: #e0c066;
+/* Адаптив бургера */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #0f0f0f;
+    flex-direction: column;
+    padding: 0;
+    z-index: 1000;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    background-color: #0f0f0f;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nav-list.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px 0;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-/* Кнопка ЗАПИСАТЬСЯ */
-.btn-enroll {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #e0c066;
-  color: #000;
-  font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+/* Стили для кнопок меню бургера (подсветка + свечение) */
+@media (max-width: 768px) {
+  a:hover,
+  a:focus,
+  a:active {
+    color: #e0c066;
+    text-shadow: 0 0 1px #e0c066;
+  }
 }
 
-.btn-enroll:hover {
-  background-color: #d4b350;
+/* Стили бургера (подсветка + свечение) */
+@media (max-width: 768px) {
+  .burger.active span {
+    background-color: #e0c066;
+    box-shadow: 0 0 1px #e0c066;
+  }
 }
 
+/* 📱 АДАПТИВНАЯ ВЕРСТКА  */
+@media (max-width: 1250px) {
+  .services-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-/* стили для блока О НАС */
-.about-section {
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 80px 0;
+  .fixed-left-title {
+    position: static;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .services-list {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .service-image img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 20px;
+  }
 }
 
-.about-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Планшет для блока НАШИ УСЛУГИ */
+@media (max-width: 1250px) {
+  .find-us-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fixed-left-title {
+    width: 100%;
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contacts-content {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .find-us-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .find-us-info .info-col {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .dark-map {
+    width: 100%;
+    height: 300px;
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    max-height: 220px; /* Ограничиваем по высоте */
+    object-fit: cover;
+    border-radius: 8px;
+  }
 }
 
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
+@media (max-width: 1250px) {
+  .services-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fixed-left-title {
+    position: static;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .services-list {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .service-image img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 20px;
+  }
 }
 
-.about-text {
-  flex: 1 1 50%;
-  font-size: 18px;
-  line-height: 1.6;
+@media (max-width: 768px) { /* Телефоны */
+  /* Адаптив для банера */
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Адаптив для блока Наши услуги */
+  .fixed-left-title {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: auto !important;
+    align-self: auto !important;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .services-layout {
+    /* display: block; */
+    gap: 60px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .service-content {
+    padding: 10px;
+  }
+
+  /* Адаптация для блока Наши работы */
+  .portfolio-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fixed-left-title {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .fixed-left-title .section-title {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Адаптация для блока Как нас найти */
+  .find-us-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contacts-content {
+    align-items: center;
+  }
+
+  .fixed-left-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .find-us-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .find-us-info .info-col {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .dark-map {
+    width: 100%;
+    height: 250px;
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+  }
 }
-
-.about-text p {
-  margin-bottom: 15px;
-}
-
-.about-image {
-  flex: 1 1 40%;
-  text-align: center;
-}
-
-.about-image img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.page-title {
-  font-size: 36px;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #e0c066;
-}
-
-
-
 

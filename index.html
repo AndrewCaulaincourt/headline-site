@@ -1,185 +1,429 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Head Line</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="footer.style.css" />
-  <script src="modal.js"></script>
-</head>
-<body>
-  
-  <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/logo.svg" alt="Head Line" />
-        </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head Line</title>
+    <!-- Стили для перекрытия вспышки сайта -->
+    <style>
+      #intro-loader {
+        position: fixed;
+        inset: 0;
+        background-color: #000;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+      }
+
+      #intro-loader.intro-hidden {
+        display: none !important;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="footer.style.css" />
+  </head>
+
+  <body>
+    <!-- Прелоадер с приветственным текстом -->
+    <div id="intro-loader">
+      <div class="intro-text">
+        <h1 class="intro-title">Head Line</h1>
+        <p>место, где стиль, уход и уверенность соединяются в одном образе.</p>
       </div>
-  
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="index.html">Главная</a></li>
-  
-          <li class="dropdown">
-            <a href="index.html#services">Услуги ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="mens.html">Мужские услуги</a></li>
-              <!--<li><a href="womens.html">Женские услуги</a></li>-->
-              <li><a href="combo.html">Комплексные</a></li>
-              <li><a href="products.html">Товары для ухода</a></li>
-              
-            </ul>
-          <li><a href="training.html">Обучение</a></li>
-          </li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="reviews.html">Отзывы</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
 
- <!-- БАНЕР -->
- <section class="hero spinning-banner">
-   <div class="rotating-circle"></div>
-   <div class="hero-content">
-      <h1>Head Line</h1>
-      <p>Стрижем как для себя. Уход, стиль и уверенность — в одном месте.</p>
-      <a href="#" class="hero-btn">Записаться</a>
-   </div>
- </section>
-
-   
-  <!-- КАТЕГОРИИ ОСНОВНЫХ УСЛУГ С СЫЛКОЙ НА ПРАЙС И ЗАПИСЬ -->
- <section id="services" class="services">
-   <div class="container services-container">
-     <h2 class="section-title">Наши услуги</h2>
- 
-     <div class="services-list">
- 
-       <a href="mens.html" class="service-link">
-         <div class="service-card">
-           <img src="images/mens.jpg" alt="Мужские услуги" />
-           <h3>Мужские услуги</h3>
-         </div>
-       </a>
-
-       <a href="womens.html" class="service-link">
-         <div class="service-card">
-           <img src="images/womens.jpg" alt="Женские услуги" />
-           <h3>Женские услуги</h3>
-         </div>
-       </a>
-
-       <a href="combo.html" class="service-link">
-         <div class="service-card">
-           <img src="images/combo.jpg" alt="Комплексные услуги" />
-           <h3>Комплексные услуги</h3>
-         </div>
-       </a>
-
-       <a href="products.html" class="service-link">
-         <div class="service-card">
-           <img src="images/products.jpg" alt="Товары для ухода" />
-           <h3>Товары для ухода</h3>
-         </div>
-       </a>
-
-       <a href="training.html" class="service-link">
-         <div class="service-card">
-           <img src="images/training.jpg" alt="Обучение" />
-           <h3>Обучение</h3>
-         </div>
-       </a>
- 
-     </div>
-   </div>
-  </section>
-
-   <!-- Модальное окно -->
- <div class="modal" id="bookingModal">
-   <div class="modal-content">
-     <span class="close-btn" id="closeModal">&times;</span>
-     <h2>Запись на услугу</h2>
-     <form>
-       <input type="text" placeholder="Ваше имя" required>
-       <input type="tel" placeholder="Телефон" required>
-       <textarea placeholder="Комментарий (необязательно)"></textarea>
-       <button type="submit">Отправить заявку</button>
-       <p id="formError" style="color: red; text-align: center; display: none;">Ошибка: заполните все поля корректно.</p>
-     </form>
-   </div>
- </div>
-
- <!-- Модальное подтверждение -->
- <div class="modal" id="successModal">
-     <div class="modal-content">
-       <span class="close-btn" id="closeSuccess">&times;</span>
-       <div class="checkmark">&#10004;</div>
-       <h2>Спасибо!</h2>
-       <p>Ваша заявка успешно отправлена.</p>
-     </div>
-   </div>
-
-<!-- Подвал сайта -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="footer-top">
-      
-      <!-- Левая колонка: Лого и соцсети -->
-      <div class="footer-column">
-        <div class="footer-left-inner">
-          <div class="footer-logo">
+    <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
             <img src="images/logo.svg" alt="Head Line" />
+          </a>
+        </div>
+
+        <!-- Только для мобильной версии -->
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+            <li class="dropdown">
+              <a href="index.html#services">Услуги ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="mens.html">Мужские услуги</a></li>
+                <li><a href="combo.html">Комплексные</a></li>
+                <li><a href="products.html">Товары для ухода</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="training.html">Обучение</a></li> -->
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- БАНЕР -->
+    <section class="hero spinning-banner">
+      <div class="rotating-circle"></div>
+      <div class="hero-content">
+        <h1 class="fugaz">Head Line</h1>
+        <p>Стрижем как для себя. Уход, стиль и уверенность — в одном месте.</p>
+        <a href="#" class="hero-btn" id="yclients-booking-btn">Записаться</a>
+      </div>
+    </section>
+
+    <div class="section-background">
+      <!-- Блок "Наши услуги" -->
+      <section id="services" class="services-section section-spacing">
+        <div class="container services-layout">
+          <div class="fixed-left-title">
+            <h2 class="section-title">Наши услуги</h2>
           </div>
-          <div class="footer-socials">
-            <a href="https://vk.com/headlinespb" target="_blank" aria-label="VK">
-              <img src="images/vk.png" alt="VK" />
-            </a>
-            <a href="https://wa.me/79219342307" target="_blank" aria-label="WhatsApp">
-              <img src="images/whatsapp.png" alt="WhatsApp" />
-            </a>
-            <a href="https://yandex.ru/profile/67905101910?lang=ru" target="_blank" aria-label="Yandex Maps">
-              <img src="images/yandex.png" alt="Yandex Maps" />
-            </a>
-            <a href="https://2gis.ru/spb/firm/70000001089604614/" target="_blank" aria-label="2GIS">
-              <img src="images/2gis.png" alt="2GIS" />
-            </a>
+
+          <div class="services-list">
+            <!-- Карточка услуги: Мужские услуги -->
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/mens.jpg" alt="Мужские услуги" />
+              </div>
+              <div class="service-content">
+                <h3>Мужские услуги</h3>
+                <p>
+                  Классические и современные стрижки, моделирование бороды и
+                  уход за кожей лица. Персональный подход к каждому клиенту.
+                </p>
+                <a href="mens.html" class="btn-details">Подробнее</a>
+              </div>
+            </div>
+
+            <!-- Карточка услуги: Комплексные услуги -->
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/combo.jpg" alt="Комплексные услуги" />
+              </div>
+              <div class="service-content">
+                <h3>Комплексные услуги</h3>
+                <p>
+                  Классические и современные стрижки, моделирование бороды и
+                  уход за кожей лица. Персональный подход к каждому клиенту.
+                </p>
+                <a href="combo.html" class="btn-details">Подробнее</a>
+              </div>
+            </div>
+
+            <!-- Карточка услуги: Товары для ухода -->
+            <div class="service-item">
+              <div class="service-image">
+                <img src="images/products.jpg" alt="Товары для ухода" />
+              </div>
+              <div class="service-content">
+                <h3>Товары для ухода</h3>
+                <p>
+                  Классические и современные стрижки, моделирование бороды и
+                  уход за кожей лица. Персональный подход к каждому клиенту.
+                </p>
+                <a href="products.html" class="btn-details">Подробнее</a>
+              </div>
+            </div>
+
+            <!-- Карточка услуги: Обучение и курсы -->
+            <!-- <div class="service-item">
+              <div class="service-image">
+                <img src="images/training.jpg" alt="Обучение" />
+              </div>
+              <div class="service-content">
+                <h3>Обучение</h3>
+                <p>
+                  Классические и современные стрижки, моделирование бороды и
+                  уход за кожей лица. Персональный подход к каждому клиенту.
+                </p>
+                <a href="training.html" class="btn-details">Подробнее</a>
+              </div>
+            </div> -->
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Центр: Навигация -->
-      <div class="footer-column footer-nav">
-        <a href="index.html">Главная</a>
-        <a href="mens.html">Услуги</a>
-        <a href="training.html">Обучение</a>
-        <a href="contacts.html">Контакты</a>
-      </div>
+      <!-- Блок "Наши работы" -->
+      <section id="portfolio" class="portfolio-section section-spacing">
+        <div class="container portfolio-layout">
+          <div class="fixed-left-title">
+            <h2 class="section-title">Наши работы</h2>
+          </div>
 
-      <!-- Правая колонка: Контакты -->
-      <div class="footer-column footer-info">
-        <p><strong>Телефон:</strong> <a href="tel:+79219342307">+7 (921) 934-23-07</a></p>
-        <p><strong>Email:</strong> <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a></p>
-        <p><strong>Адрес:</strong> г. Санкт-Петербург,<br>ул. Рузовская, д. 13</p>
-      </div>
-      
+          <div class="slider-container">
+            <div class="slider" id="slider">
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_0563.JPG" alt="Работа 1" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_0573.JPG" alt="Работа 2" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_0578.JPG" alt="Работа 3" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_0981.jpg" alt="Работа 4" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_0985.jpg" alt="Работа 5" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_0994.jpg" alt="Работа 6" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_0995.jpg" alt="Работа 7" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_0996.jpg" alt="Работа 8" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_1514.jpg" alt="Работа 9" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_1512.jpg" alt="Работа 10" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_1535.jpg" alt="Работа 11" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_1536.jpg" alt="Работа 12" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_1542.jpg" alt="Работа 13" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_1543.jpg" alt="Работа 14" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_1674.jpg" alt="Работа 15" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_1679.jpg" alt="Работа 16" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_2059.jpg" alt="Работа 17" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_2049.jpg" alt="Работа 18" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_2120.jpg" alt="Работа 19" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_2123.jpg" alt="Работа 20" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_2498.jpg" alt="Работа 21" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_2209.jpg" alt="Работа 22" />
+              </div>
+              <div class="slide">
+                <img src="images/model_haircuts/IMG_2216.jpg" alt="Работа 23" />
+              </div>
+            </div>
+            <!-- Стрелки управления -->
+            <button class="slider-btn prev" id="prevBtn">&#10094;</button>
+            <button class="slider-btn next" id="nextBtn">&#10095;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Блок "Как нас найти" -->
+      <section id="find-us" class="section-find-us section-spacing">
+        <div class="container find-us-layout">
+          <div class="fixed-left-title">
+            <h2 class="section-title">КОНТАКТЫ</h2>
+          </div>
+
+          <!-- ПРАВАЯ КОЛОНКА: КОНТАКТЫ + КАРТА -->
+          <div class="contacts-content">
+            <div class="find-us-info">
+              <div class="info-col">
+                <p>Санкт-Петербург</p>
+                <p>Станция метро Пушкинская</p>
+                <p>улица Рузовская, дом 13</p>
+              </div>
+              <div class="info-col">
+                <p><a href="tel:+79219342307">+7 (921) 934-23-07</a></p>
+                <p>
+                  <a href="https://wa.me/79219342307" target="_blank"
+                    >Написать в WhatsApp</a
+                  >
+                </p>
+                <p>
+                  <a href="https://t.me/HeadlineSpb" target="_blank"
+                    >Следить за новостями в Telegram</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div id="map" class="dark-map"></div>
+            <!-- Скрипт Яндекс.Карт -->
+            <script src="https://api-maps.yandex.ru/2.1/?apikey=8ab5e014-2f7b-4bd7-8d71-d837c0801e84&lang=ru_RU"></script>
+            <script>
+              ymaps.ready(init);
+              function init() {
+                const map = new ymaps.Map("map", {
+                  center: [59.916897, 30.327948], // Координаты Рузовская, 13
+                  zoom: 16,
+                  controls: [],
+                });
+
+                // Кастомная метка
+                const placemark = new ymaps.Placemark(
+                  [59.916897, 30.327948],
+                  {
+                    hintContent: "Head Line",
+                    balloonContent: "Салон Head Line — Рузовская, 13",
+                  },
+                  {
+                    preset: "islands#dotIcon",
+                    iconColor: "#e0c066",
+                  }
+                );
+
+                map.geoObjects.add(placemark);
+
+                // Тёмная тема
+                map.options.set("mapAutoSwitch", false); // отключаем авто
+                map.container.getElement().style.filter =
+                  "invert(90%) grayscale(1) contrast(1.2)";
+              }
+            </script>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- Низ футера -->
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        <a href="privacy.html">Политика обработки персональных данных</a>
-        <a href="terms.html">Пользовательское соглашение и политика конфиденциальности</a>
+    <!-- Модальное окно -->
+    <div class="modal" id="bookingModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h2>Запись на услугу</h2>
+        <form>
+          <input type="text" placeholder="Ваше имя" required />
+          <input type="tel" placeholder="Телефон" required />
+          <textarea placeholder="Комментарий (необязательно)"></textarea>
+          <button type="submit">Отправить заявку</button>
+          <p
+            id="formError"
+            style="color: red; text-align: center; display: none"
+          >
+            Ошибка: заполните все поля корректно.
+          </p>
+        </form>
       </div>
-      <p class="copyright">© 2025 Head Line. Все права защищены.</p>
     </div>
 
-  </div>
-</footer>
-</body>
+    <!-- Модальное подтверждение -->
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeSuccess">&times;</span>
+        <div class="checkmark">&#10004;</div>
+        <h2>Спасибо!</h2>
+        <p>Ваша заявка успешно отправлена.</p>
+      </div>
+    </div>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <!-- Левая колонка: Лого и соцсети -->
+          <div class="footer-column">
+            <div class="footer-left-inner">
+              <div class="footer-logo">
+                <img src="images/logo-footer.svg" alt="Head Line" />
+              </div>
+              <div class="footer-socials">
+                <a
+                  href="https://vk.com/headlinespb"
+                  target="_blank"
+                  aria-label="VK"
+                >
+                  <img src="images/vk.png" alt="VK" />
+                </a>
+                <a
+                  href="https://wa.me/79219342307"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <img src="images/whatsapp.png" alt="WhatsApp" />
+                </a>
+                <a
+                  href="https://yandex.ru/profile/67905101910?lang=ru"
+                  target="_blank"
+                  aria-label="Yandex Maps"
+                >
+                  <img src="images/yandex.png" alt="Yandex Maps" />
+                </a>
+                <a
+                  href="https://2gis.ru/spb/firm/70000001089604614/"
+                  target="_blank"
+                  aria-label="2GIS"
+                >
+                  <img src="images/2gis.png" alt="2GIS" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Центр: Навигация -->
+          <div class="footer-column footer-nav">
+            <a href="index.html">Главная</a>
+            <a href="index.html#services">Услуги</a>
+            <!-- <a href="training.html">Обучение</a> -->
+            <a href="contacts.html">Контакты</a>
+          </div>
+
+          <!-- Правая колонка: Контакты -->
+          <div class="footer-column footer-info">
+            <p>
+              <strong>Телефон:</strong>
+              <a href="tel:+79219342307">+7 (921) 934-23-07</a>
+            </p>
+            <p>
+              <strong>Адрес:</strong> г. Санкт-Петербург,<br />ул. Рузовская, д.
+              13
+            </p>
+            <p>
+              <strong>Разработчик сайта:</strong>
+              <a href="https://t.me/Andrew_Romanov_SPB">Андрей Романов</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Низ футера -->
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="privacy.html">Политика обработки персональных данных</a>
+            <a href="terms.html"
+              >Пользовательское соглашение и политика конфиденциальности</a
+            >
+          </div>
+          <p class="copyright">© 2025 Head Line. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://w1127595.yclients.com/widgetJS"
+      charset="UTF-8"
+    ></script>
+    <script src="modal.js"></script>
+  </body>
 </html>

@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>О нас | Barber Bros</title>
-  <link rel="stylesheet" href="style.css">
+  <title>О нас | Head Line</title>
+  <link rel="stylesheet" href="mens.style.css" />
+  <link rel="stylesheet" href="about.style.css" />
   <link rel="stylesheet" href="footer.style.css" />
+  <script src="modal.js"></script>
 </head>
 <body>
 
@@ -16,6 +18,13 @@
         <a href="index.html">
           <img src="images/logo.svg" alt="Head Line" />
         </a>
+      </div>
+
+       <!-- Только для мобильной версии -->
+       <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
   
       <nav class="nav">
@@ -42,18 +51,28 @@
   </header>
 
   <!-- Блок О НАС -->
-  <section class="about-section">
-    <div class="container">
-      <h1 class="page-title">О нас</h1>
+  <section class="page-section">
+    <div class="container page-layout">
+      <div class="fixed-left-title">
+        <h1 class="page-title">О нас</h1>
+      </div>
+  
       <div class="about-content">
-        <div class="about-text">
-          <p><strong>Barber Bros</strong> — это не просто стрижка. Мы создаём стиль, уверенность и атмосферу.</p>
-          <p>Наша команда — это мастера с опытом более 5 лет. Мы уважаем классику и следим за современными трендами.</p>
-          <p>Здесь вы получите не только качественную стрижку, но и настоящую перезагрузку.</p>
-        </div>
-        <div class="about-image">
-          <img src="images/about.jpg" alt="Наша команда">
-        </div>
+        <p>
+          <strong>Head Line</strong> — это не просто барбершоп. Это место, где каждый гость становится частью атмосферы уюта, стиля и заботы. Мы верим, что стрижка — это не просто уход, а способ выразить себя, подчеркнуть индивидуальность и почувствовать уверенность.
+        </p>
+        <p>
+          Наша команда — это мастера своего дела, которые не просто стригут, а создают образы. Мы подходим к каждому клиенту индивидуально: учитываем стиль жизни, черты лица, пожелания и даже настроение. Мы знаем, как важно чувствовать себя «на своём месте» — именно такую атмосферу мы создаём.
+        </p>
+        <p>
+          Мы используем исключительно профессиональные средства премиального класса: <strong>London Grooming, Solomon's, Rebel, Morgan's</strong> — бренды, проверенные временем и доверием мастеров по всему миру. Это не только про уход, это про качество без компромиссов.
+        </p>
+        <p>
+          <em>Наша миссия — сделать так, чтобы каждый, кто зашёл в Head Line, вышел не просто с новой стрижкой, а с новым настроением, уверенностью в себе и желанием возвращаться снова.</em>
+        </p>
+        <p>
+          Добро пожаловать в Head Line — твой персональный барбершоп с душой.
+        </p>
       </div>
     </div>
   </section>
@@ -68,7 +87,7 @@
       <div class="footer-column">
         <div class="footer-left-inner">
           <div class="footer-logo">
-            <img src="images/logo.svg" alt="Head Line" />
+            <img src="images/logo-footer.svg" alt="Head Line" />
           </div>
           <div class="footer-socials">
             <a href="https://vk.com/headlinespb" target="_blank" aria-label="VK">
@@ -90,7 +109,7 @@
       <!-- Центр: Навигация -->
       <div class="footer-column footer-nav">
         <a href="index.html">Главная</a>
-        <a href="mens.html">Услуги</a>
+        <a href="index.html#services">Услуги</a>
         <a href="training.html">Обучение</a>
         <a href="#">Контакты</a>
       </div>
