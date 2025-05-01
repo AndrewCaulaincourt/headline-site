@@ -1,139 +1,172 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>О нас | Head Line</title>
-  <link rel="stylesheet" href="mens.style.css" />
-  <link rel="stylesheet" href="about.style.css" />
-  <link rel="stylesheet" href="footer.style.css" />
-  <script src="modal.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>О нас | Head Line</title>
+    <link rel="stylesheet" href="mens.style.css" />
+    <link rel="stylesheet" href="about.style.css" />
+    <link rel="stylesheet" href="footer.style.css" />
+    <script src="modal.js"></script>
+  </head>
+  <body>
+    <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="Head Line" />
+          </a>
+        </div>
 
-  <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/logo.svg" alt="Head Line" />
-        </a>
+        <!-- Только для мобильной версии -->
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+
+            <li class="dropdown">
+              <a href="index.html#services">Услуги ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="mens.html">Мужские услуги</a></li>
+                <li><a href="combo.html">Комплексные</a></li>
+                <li><a href="products.html">Товары для ухода</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="training.html">Обучение</a></li> -->
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-       <!-- Только для мобильной версии -->
-       <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-  
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="index.html">Главная</a></li>
-  
-          <li class="dropdown">
-            <a href="index.html#services">Услуги ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="mens.html">Мужские услуги</a></li>
-              <!--<li><a href="womens.html">Женские услуги</a></li>-->
-              <li><a href="combo.html">Комплексные</a></li>
-              <li><a href="products.html">Товары для ухода</a></li>
-              
-            </ul>
-          <li><a href="training.html">Обучение</a></li>
-          </li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="reviews.html">Отзывы</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Блок О НАС -->
+    <section class="page-section">
+      <div class="container page-layout">
+        <div class="fixed-left-title">
+          <h1 class="page-title">О нас</h1>
+        </div>
 
-  <!-- Блок О НАС -->
-  <section class="page-section">
-    <div class="container page-layout">
-      <div class="fixed-left-title">
-        <h1 class="page-title">О нас</h1>
-      </div>
-  
-      <div class="about-content">
-        <p>
-          <strong>Head Line</strong> — это не просто барбершоп. Это место, где каждый гость становится частью атмосферы уюта, стиля и заботы. Мы верим, что стрижка — это не просто уход, а способ выразить себя, подчеркнуть индивидуальность и почувствовать уверенность.
-        </p>
-        <p>
-          Наша команда — это мастера своего дела, которые не просто стригут, а создают образы. Мы подходим к каждому клиенту индивидуально: учитываем стиль жизни, черты лица, пожелания и даже настроение. Мы знаем, как важно чувствовать себя «на своём месте» — именно такую атмосферу мы создаём.
-        </p>
-        <p>
-          Мы используем исключительно профессиональные средства премиального класса: <strong>London Grooming, Solomon's, Rebel, Morgan's</strong> — бренды, проверенные временем и доверием мастеров по всему миру. Это не только про уход, это про качество без компромиссов.
-        </p>
-        <p>
-          <em>Наша миссия — сделать так, чтобы каждый, кто зашёл в Head Line, вышел не просто с новой стрижкой, а с новым настроением, уверенностью в себе и желанием возвращаться снова.</em>
-        </p>
-        <p>
-          Добро пожаловать в Head Line — твой персональный барбершоп с душой.
-        </p>
-      </div>
-    </div>
-  </section>
-
-<!-- Подвал сайта -->
-<footer class="footer">
-  <div class="footer-container">
-
-    <div class="footer-top">
-      
-      <!-- Левая колонка: Лого и соцсети -->
-      <div class="footer-column">
-        <div class="footer-left-inner">
-          <div class="footer-logo">
-            <img src="images/logo-footer.svg" alt="Head Line" />
-          </div>
-          <div class="footer-socials">
-            <a href="https://vk.com/headlinespb" target="_blank" aria-label="VK">
-              <img src="images/vk.png" alt="VK" />
-            </a>
-            <a href="https://wa.me/79219342307" target="_blank" aria-label="WhatsApp">
-              <img src="images/whatsapp.png" alt="WhatsApp" />
-            </a>
-            <a href="https://yandex.ru/profile/67905101910?lang=ru" target="_blank" aria-label="Yandex Maps">
-              <img src="images/yandex.png" alt="Yandex Maps" />
-            </a>
-            <a href="https://2gis.ru/spb/firm/70000001089604614/" target="_blank" aria-label="2GIS">
-              <img src="images/2gis.png" alt="2GIS" />
-            </a>
-          </div>
+        <div class="about-content">
+          <p>
+            <strong>Head Line</strong> — это не просто барбершоп. Это место, где
+            каждый гость становится частью атмосферы уюта, стиля и заботы. Мы
+            верим, что стрижка — это не просто уход, а способ выразить себя,
+            подчеркнуть индивидуальность и почувствовать уверенность.
+          </p>
+          <p>
+            Наша команда — это мастера своего дела, которые не просто стригут, а
+            создают образы. Мы подходим к каждому клиенту индивидуально:
+            учитываем стиль жизни, черты лица, пожелания и даже настроение. Мы
+            знаем, как важно чувствовать себя «на своём месте» — именно такую
+            атмосферу мы создаём.
+          </p>
+          <p>
+            Мы используем исключительно профессиональные средства премиального
+            класса: <strong>London Grooming, Solomon's, Morgan's</strong> —
+            бренды, проверенные временем и доверием мастеров по всему миру. Это
+            не только про уход, это про качество без компромиссов.
+          </p>
+          <p>
+            <em
+              >Наша миссия — сделать так, чтобы каждый, кто зашёл в Head Line,
+              вышел не просто с новой стрижкой, а с новым настроением,
+              уверенностью в себе и желанием возвращаться снова.</em
+            >
+          </p>
+          <p>
+            Добро пожаловать в Head Line — твой персональный барбершоп с душой.
+          </p>
         </div>
       </div>
+    </section>
 
-      <!-- Центр: Навигация -->
-      <div class="footer-column footer-nav">
-        <a href="index.html">Главная</a>
-        <a href="index.html#services">Услуги</a>
-        <a href="training.html">Обучение</a>
-        <a href="#">Контакты</a>
+    <!-- Подвал сайта -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <!-- Левая колонка: Лого и соцсети -->
+          <div class="footer-column">
+            <div class="footer-left-inner">
+              <div class="footer-logo">
+                <img src="images/logo-footer.svg" alt="Head Line" />
+              </div>
+              <div class="footer-socials">
+                <a
+                  href="https://vk.com/headlinespb"
+                  target="_blank"
+                  aria-label="VK"
+                >
+                  <img src="images/vk.png" alt="VK" />
+                </a>
+                <a
+                  href="https://wa.me/79219342307"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <img src="images/whatsapp.png" alt="WhatsApp" />
+                </a>
+                <a
+                  href="https://yandex.ru/profile/67905101910?lang=ru"
+                  target="_blank"
+                  aria-label="Yandex Maps"
+                >
+                  <img src="images/yandex.png" alt="Yandex Maps" />
+                </a>
+                <a
+                  href="https://2gis.ru/spb/firm/70000001089604614/"
+                  target="_blank"
+                  aria-label="2GIS"
+                >
+                  <img src="images/2gis.png" alt="2GIS" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Центр: Навигация -->
+          <div class="footer-column footer-nav">
+            <a href="index.html">Главная</a>
+            <a href="index.html#services">Услуги</a>
+            <!-- <a href="training.html">Обучение</a> -->
+            <a href="#">Контакты</a>
+          </div>
+
+          <!-- Правая колонка: Контакты -->
+          <div class="footer-column footer-info">
+            <p>
+              <strong>Телефон:</strong>
+              <a href="tel:+79219342307">+7 (921) 934-23-07</a>
+            </p>
+            <p>
+              <strong>Адрес:</strong> г. Санкт-Петербург,<br />ул. Рузовская, д.
+              13
+            </p>
+            <p>
+              <strong>Разработчик сайта:</strong>
+              <a href="https://t.me/Andrew_Romanov_SPB">Андрей Романов</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Низ футера -->
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="privacy.html">Политика обработки персональных данных</a>
+            <a href="terms.html"
+              >Пользовательское соглашение и политика конфиденциальности</a
+            >
+          </div>
+          <p class="copyright">© 2025 Head Line. Все права защищены.</p>
+        </div>
       </div>
-
-      <!-- Правая колонка: Контакты -->
-      <div class="footer-column footer-info">
-        <p><strong>Телефон:</strong> <a href="tel:+79219342307">+7 (921) 934-23-07</a></p>
-        <p><strong>Email:</strong> <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a></p>
-        <p><strong>Адрес:</strong> г. Санкт-Петербург,<br>ул. Рузовская, д. 13</p>
-      </div>
-      
-    </div>
-
-    <!-- Низ футера -->
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        <a href="privacy.html">Политика обработки персональных данных</a>
-        <a href="terms.html">Пользовательское соглашение и политика конфиденциальности</a>
-      </div>
-      <p class="copyright">© 2025 Head Line. Все права защищены.</p>
-    </div>
-
-  </div>
-</footer>
-
-</body>
+    </footer>
+  </body>
 </html>

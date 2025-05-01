@@ -142,10 +142,11 @@ html {
 }  
 
 .logo img {
-  height: 35px;
+  height: 40px;
 }
   
 .nav-list {
+  font-family: 'Russo One', sans-serif;
   list-style: none;
   display: flex;
   gap: 30px;
@@ -195,28 +196,50 @@ html {
   color: #e0c066;
 }
 
-.map-wrapper {
+.map-section {
+  padding: 40px 0;
+}
+
+.dark-map {
   background-color: transparent;
-  padding: 40px 20px;
-}
-
-.map-wrapper .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.map-wrapper iframe {
+  padding: 40px 20px 40px;
   width: 100%;
-  height: 500px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  height: 700px;
+  margin: 0;
+  overflow: hidden;
 }
+
+.dark-map * {
+  border-radius: 12px !important;
+}
+
 
 .section-title {
   background-color: transparent; 
   padding: 40px 20px;
   color: #fff;
+}
+
+/* Стили для юредической информации */
+.legal-info {
+  padding: 5px 5px;
+  background-color: transparent;
+  color: #ffffff;
+  text-align: center;
+}
+
+.legal-info .legal-title {
+  font-size:20px;
+  color: #e0c066;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.legal-info p {
+  font-size: 15px;
+  margin: 10px 0;
 }
 
 /* Адаптив для мобилок */
@@ -247,11 +270,11 @@ html {
     font-size: 16px;
   }
 
-  .map-wrapper {
+  .dark-map {
     padding: 60px 10px;
   }
 
-  .map-wrapper iframe {
+  .dark-map {
     height: 300px;
   }
 
@@ -264,13 +287,13 @@ html {
   }
 
   .nav-list {
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .nav-list a {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -356,7 +379,7 @@ html {
   a:focus,
   a:active {
     color: #e0c066;
-    text-shadow: 0 0 8px #e0c066;
+    text-shadow: 0 0 1px #e0c066;
   }
 }
 
@@ -364,6 +387,6 @@ html {
 @media (max-width: 768px) {
   .burger.active span {
     background-color: #e0c066;
-    box-shadow: 0 0 10px #e0c066;
+    box-shadow: 0 0 1px #e0c066;
   }
 }

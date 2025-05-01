@@ -185,7 +185,7 @@ html {
 }
 
 .logo img {
-  height: 35px;
+  height: 40px;
 }
   
 .nav-list {
@@ -712,6 +712,130 @@ html {
   }
 }
 
+/* 📱 АДАПТИВНАЯ ВЕРСТКА  */
+@media (max-width: 1250px) {
+  .services-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fixed-left-title {
+    position: static;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .services-list {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .service-image img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 20px;
+  }
+
+  /* Планшет для блока НАШИ УСЛУГИ */
+  .find-us-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fixed-left-title {
+    width: 100%;
+    position: static;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contacts-content {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .find-us-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .find-us-info .info-col {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .dark-map {
+    width: 100%;
+    height: 300px;
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .service-image img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    max-height: 220px; /* Ограничиваем по высоте */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .services-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fixed-left-title {
+    position: static;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .services-list {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .service-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .service-image img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .service-content {
+    padding: 20px;
+  }
+}
+
 /* Хедер, для мобилки, бургер-меню для */
 .burger {
   display: none; /* Только на мобилках */
@@ -778,7 +902,7 @@ html {
   }
 
   .logo img {
-    height: 35px;
+    height: 40px;
   }
 
   .header .container {
@@ -803,134 +927,6 @@ html {
   .burger.active span {
     background-color: #e0c066;
     box-shadow: 0 0 1px #e0c066;
-  }
-}
-
-/* 📱 АДАПТИВНАЯ ВЕРСТКА  */
-@media (max-width: 1250px) {
-  .services-layout {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .fixed-left-title {
-    position: static;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 30px;
-  }
-
-  .services-list {
-    width: 100%;
-    gap: 30px;
-  }
-
-  .service-item {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .service-image img {
-    height: auto;
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  .service-content {
-    padding: 20px;
-  }
-}
-
-/* Планшет для блока НАШИ УСЛУГИ */
-@media (max-width: 1250px) {
-  .find-us-layout {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .fixed-left-title {
-    width: 100%;
-    position: static;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .contacts-content {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    gap: 20px;
-  }
-
-  .find-us-info {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .find-us-info .info-col {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  .dark-map {
-    width: 100%;
-    height: 300px;
-    max-width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-  }
-
-  .service-image img {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-    max-height: 220px; /* Ограничиваем по высоте */
-    object-fit: cover;
-    border-radius: 8px;
-  }
-}
-
-@media (max-width: 1250px) {
-  .services-layout {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .fixed-left-title {
-    position: static;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 30px;
-  }
-
-  .services-list {
-    width: 100%;
-    gap: 30px;
-  }
-
-  .service-item {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .service-image img {
-    height: auto;
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  .service-content {
-    padding: 20px;
   }
 }
 

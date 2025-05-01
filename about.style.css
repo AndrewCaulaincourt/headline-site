@@ -46,7 +46,7 @@ body::before {
 
 .page-layout {
   display: flex;
-  gap: 60px;
+  gap: 40px;
   align-items: flex-start;
 }
 
@@ -71,14 +71,7 @@ body::before {
   text-align: left;
 }
 
-
 /* Стили блока с текстом */
-.about-section {
-  padding: 100px 20px;
-  color: #fff;
-  font-family: 'Rubik', sans-serif;
-}
-
 .about-content {
   max-width: 800px;
   margin: 0 0;
@@ -86,7 +79,6 @@ body::before {
   font-size: 18px;
   text-align: justify;
 }
-
 
 .about-content p {
   margin-bottom: 20px;
@@ -108,7 +100,7 @@ body::before {
   .page-layout {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
   }
 
   .fixed-left-title {
@@ -121,6 +113,7 @@ body::before {
   .page-title {
     font-size: 24px;
     text-align: center;
+    letter-spacing: 1.5px;
   }
 
   .about-content {
@@ -128,10 +121,6 @@ body::before {
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
-  }
-
-  .about-section {
-    padding: 60px 0;
   }
 }
 

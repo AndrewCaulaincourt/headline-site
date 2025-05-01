@@ -119,25 +119,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4000);
   }
 });
-
-// === YClients виджет (кнопка в баннере) ===
-const yclientsBtn = document.getElementById("yclients-booking-btn");
-
-function initYclients() {
-  if (typeof YWidget !== "undefined") {
-    YWidget.init({
-      companyId: 1127595,
-      buttonText: "Записаться",
-    });
-  } else {
-    console.log("YClients не готов, пробуем снова...");
-    setTimeout(initYclients, 500);
-  }
-}
-
-if (yclientsBtn) {
-  yclientsBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    initYclients();
-  });
-}

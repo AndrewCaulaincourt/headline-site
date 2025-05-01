@@ -32,7 +32,7 @@
     <div id="intro-loader">
       <div class="intro-text">
         <h1 class="intro-title">Head Line</h1>
-        <p>место, где стиль, уход и уверенность соединяются в одном образе.</p>
+        <p>Место, где стиль, уход и уверенность соединяются в одном образе</p>
       </div>
     </div>
 
@@ -78,7 +78,12 @@
       <div class="hero-content">
         <h1 class="fugaz">Head Line</h1>
         <p>Стрижем как для себя. Уход, стиль и уверенность — в одном месте.</p>
-        <a href="#" class="hero-btn" id="yclients-booking-btn">Записаться</a>
+        <a
+          href="#"
+          class="hero-btn yclients-widget-button"
+          data-ywidget-type="button"
+          >Записаться</a
+        >
       </div>
     </section>
 
@@ -421,9 +426,25 @@
 
     <script
       type="text/javascript"
-      src="https://w1127595.yclients.com/widgetJS"
+      src="//w1127595.yclients.com/widgetJS"
       charset="UTF-8"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("yclients-booking-btn");
+        if (btn && typeof YWidget !== "undefined") {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            YWidget.init({
+              companyId: 1127595,
+              theme: "dark",
+              backgroundColor: "#0f0f0f",
+              primaryColor: "#e0c066",
+            });
+          });
+        }
+      });
+    </script>
     <script src="modal.js"></script>
   </body>
 </html>

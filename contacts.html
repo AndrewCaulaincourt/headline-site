@@ -1,141 +1,213 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Контакты | Head Line</title>
-  <link rel="stylesheet" href="contacts.style.css">
-  <link rel="stylesheet" href="footer.style.css" />
-  <script src="modal.js"></script>
-</head>
-<body>
-  
-  <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
-  <header class="header">
-    <div class="container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/logo.svg" alt="Head Line" />
-        </a>
-      </div>
-
-      <!-- Только для мобильной версии -->
-      <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-  
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="index.html">Главная</a></li>
-  
-          <li class="dropdown">
-            <a href="index.html#services">Услуги ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="mens.html">Мужские услуги</a></li>
-              <!--<li><a href="womens.html">Женские услуги</a></li>-->
-              <li><a href="combo.html">Комплексные</a></li>
-              <li><a href="products.html">Товары для ухода</a></li>
-              
-            </ul>
-          <li><a href="training.html">Обучение</a></li>
-          </li>
-          <li><a href="about.html">О нас</a></li>
-          <li><a href="reviews.html">Отзывы</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Контакты -->
-  <section class="section-title">
-    <div class="container">
-      <h1 class="page-title">Контакты</h1>
-  
-      <div class="contacts-columns">
-        <div class="contacts-block">
-          <p>Санкт-Петербург</p>
-          <p>Станция метро Пушкинская</p>
-          <p>улица Рузовская, дом 13</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты | Head Line</title>
+    <link rel="stylesheet" href="contacts.style.css" />
+    <link rel="stylesheet" href="footer.style.css" />
+    <script src="modal.js"></script>
+  </head>
+  <body>
+    <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo.svg" alt="Head Line" />
+          </a>
         </div>
-        <div class="contacts-block">
-          <p><a href="tel:+79312010101">+7 (921) 934-23-07</a></p>
-          <p><a href="https://wa.me/79219342307" target="_blank">Написать в WhatsApp</a></p>
-          <p><a href="https://t.me/HeadlineSpb" target="_blank">Следить за новостями в Telegram</a></p>
+
+        <!-- Только для мобильной версии -->
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+
+            <li class="dropdown">
+              <a href="index.html#services">Услуги ▾</a>
+              <ul class="dropdown-menu">
+                <li><a href="mens.html">Мужские услуги</a></li>
+                <li><a href="combo.html">Комплексные</a></li>
+                <li><a href="products.html">Товары для ухода</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="training.html">Обучение</a></li> -->
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </section>
-  
-  <!-- Карта (с ней я плакал. Гори в аду Яндекс конструктор)-->
-  <div class="map-wrapper">
-    <div class="container">
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A52a1b30fb59bb15c5a07bef33f76ae733fe9bda4d0494c7e2d949afffabadeaa&amp;source=constructor" width="100%" height="500" frameborder="0"></iframe>
-    </div>
-  </div>
+    </header>
 
-<!-- Подвал сайта -->
-<footer class="footer">
-  <div class="footer-container">
+    <!-- Контакты -->
+    <section class="section-title">
+      <div class="container">
+        <h1 class="page-title">Контакты</h1>
 
-    <div class="footer-top">
-      
-      <!-- Левая колонка: Лого и соцсети -->
-      <div class="footer-column">
-        <div class="footer-left-inner">
-          <div class="footer-logo">
-            <img src="images/logo-footer.svg" alt="Head Line" />
+        <div class="contacts-columns">
+          <div class="contacts-block">
+            <p>Санкт-Петербург</p>
+            <p>
+              Станция метро: Пушкинская, <br />Технологический институт 1, 2
+            </p>
+            <p>улица Рузовская, дом 13</p>
           </div>
-          <div class="footer-socials">
-            <a href="https://vk.com/headlinespb" target="_blank" aria-label="VK">
-              <img src="images/vk.png" alt="VK" />
-            </a>
-            <a href="https://wa.me/79219342307" target="_blank" aria-label="WhatsApp">
-              <img src="images/whatsapp.png" alt="WhatsApp" />
-            </a>
-            <a href="https://yandex.ru/profile/67905101910?lang=ru" target="_blank" aria-label="Yandex Maps">
-              <img src="images/yandex.png" alt="Yandex Maps" />
-            </a>
-            <a href="https://2gis.ru/spb/firm/70000001089604614/" target="_blank" aria-label="2GIS">
-              <img src="images/2gis.png" alt="2GIS" />
-            </a>
+          <div class="contacts-block">
+            <p><a href="tel:+79312010101">+7 (921) 934-23-07</a></p>
+            <p>
+              <a href="https://wa.me/79219342307" target="_blank"
+                >Написать в WhatsApp</a
+              >
+            </p>
+            <p>
+              <a href="https://t.me/HeadlineSpb" target="_blank"
+                >Следить за новостями в Telegram</a
+              >
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a>
+            </p>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Центр: Навигация -->
-      <div class="footer-column footer-nav">
-        <a href="index.html">Главная</a>
-        <a href="index.html#services">Услуги</a>
-        <a href="training.html">Обучение</a>
-        <a href="#">Контакты</a>
+    <!-- Юридическая информация -->
+    <section class="legal-info">
+      <div class="container">
+        <h2 class="legal-title">Услуги оказывает:</h2>
+        <p>ИП Котов Константин Сергеевич</p>
+        <p>ОГРНИП: 324420500042871 &nbsp; | &nbsp; ИНН: 421410426126</p>
+        <p>Дата регистрации: 25.04.2024</p>
       </div>
+    </section>
 
-      <!-- Правая колонка: Контакты -->
-      <div class="footer-column footer-info">
-        <p><strong>Телефон:</strong> <a href="tel:+79219342307">+7 (921) 934-23-07</a></p>
-        <p><strong>Email:</strong> <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a></p>
-        <p><strong>Адрес:</strong> г. Санкт-Петербург,<br>ул. Рузовская, д. 13</p>
+    <!-- Карта -->
+    <section class="map-section">
+      <div class="container">
+        <div id="map" class="dark-map"></div>
       </div>
-      
-    </div>
+    </section>
+    <!-- Скрипт Яндекс.Карт -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=8ab5e014-2f7b-4bd7-8d71-d837c0801e84&lang=ru_RU"></script>
+    <script>
+      ymaps.ready(init);
+      function init() {
+        const map = new ymaps.Map("map", {
+          center: [59.916897, 30.327948], // Координаты Рузовская, 13
+          zoom: 16,
+          controls: [],
+        });
 
-    <!-- Низ футера -->
-    <div class="footer-bottom">
-      <div class="footer-legal">
-        <a href="privacy.html">Политика обработки персональных данных</a>
-        <a href="terms.html">Пользовательское соглашение и политика конфиденциальности</a>
+        // Кастомная метка
+        const placemark = new ymaps.Placemark(
+          [59.916897, 30.327948],
+          {
+            hintContent: "Head Line",
+            balloonContent: "Салон Head Line — Рузовская, 13",
+          },
+          {
+            preset: "islands#dotIcon",
+            iconColor: "#e0c066",
+          }
+        );
+
+        map.geoObjects.add(placemark);
+
+        // Тёмная тема
+        map.options.set("mapAutoSwitch", false); // отключаем авто
+        map.container.getElement().style.filter =
+          "invert(90%) grayscale(1) contrast(1.2)";
+      }
+    </script>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <!-- Левая колонка: Лого и соцсети -->
+          <div class="footer-column">
+            <div class="footer-left-inner">
+              <div class="footer-logo">
+                <img src="images/logo-footer.svg" alt="Head Line" />
+              </div>
+              <div class="footer-socials">
+                <a
+                  href="https://vk.com/headlinespb"
+                  target="_blank"
+                  aria-label="VK"
+                >
+                  <img src="images/vk.png" alt="VK" />
+                </a>
+                <a
+                  href="https://wa.me/79219342307"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <img src="images/whatsapp.png" alt="WhatsApp" />
+                </a>
+                <a
+                  href="https://yandex.ru/profile/67905101910?lang=ru"
+                  target="_blank"
+                  aria-label="Yandex Maps"
+                >
+                  <img src="images/yandex.png" alt="Yandex Maps" />
+                </a>
+                <a
+                  href="https://2gis.ru/spb/firm/70000001089604614/"
+                  target="_blank"
+                  aria-label="2GIS"
+                >
+                  <img src="images/2gis.png" alt="2GIS" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Центр: Навигация -->
+          <div class="footer-column footer-nav">
+            <a href="index.html">Главная</a>
+            <a href="index.html#services">Услуги</a>
+            <!-- <a href="training.html">Обучение</a> -->
+            <a href="#">Контакты</a>
+          </div>
+
+          <!-- Правая колонка: Контакты -->
+          <div class="footer-column footer-info">
+            <p>
+              <strong>Телефон:</strong>
+              <a href="tel:+79219342307">+7 (921) 934-23-07</a>
+            </p>
+            <p>
+              <strong>Адрес:</strong> г. Санкт-Петербург,<br />ул. Рузовская, д.
+              13
+            </p>
+            <p>
+              <strong>Разработчик сайта:</strong
+              ><a href="https://t.me/Andrew_Romanov_SPB"> Андрей Романов</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Низ футера -->
+        <div class="footer-bottom">
+          <div class="footer-legal">
+            <a href="privacy.html">Политика обработки персональных данных</a>
+            <a href="terms.html"
+              >Пользовательское соглашение и политика конфиденциальности</a
+            >
+          </div>
+          <p class="copyright">© 2025 Head Line. Все права защищены.</p>
+        </div>
       </div>
-      <p class="copyright">© 2025 Head Line. Все права защищены.</p>
-    </div>
-
-  </div>
-</footer>
-
-</body>
+    </footer>
+  </body>
 </html>
-
-
-

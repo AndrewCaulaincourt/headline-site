@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="footer.style.css" />
     <script src="modal.js"></script>
   </head>
+
   <body>
     <!-- Хедер, копировать можно для всех страниц, он у меня не меняется -->
     <header class="header">
@@ -17,6 +18,13 @@
           <a href="index.html">
             <img src="images/logo.svg" alt="Head Line" />
           </a>
+        </div>
+
+        <!-- Только для мобильной версии -->
+        <div class="burger" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
         <nav class="nav">
@@ -31,8 +39,7 @@
                 <li><a href="products.html">Товары для ухода</a></li>
               </ul>
             </li>
-            <li><a href="training.html">Обучение</a></li>
-
+            <!-- <li><a href="training.html">Обучение</a></li> -->
             <li><a href="about.html">О нас</a></li>
             <li><a href="reviews.html">Отзывы</a></li>
             <li><a href="contacts.html">Контакты</a></li>
@@ -44,23 +51,25 @@
     <!-- Контент -->
     <section class="page-section">
       <div class="container">
-        <div class="fixed-title-container">
-          <h1 class="page-title">Отзывы наших<br />клиентов</h1>
-        </div>
+        <div class="page-layout">
+          <div class="fixed-left-title">
+            <h1 class="page-title">Отзывы наших<br />клиентов</h1>
+          </div>
 
-        <div class="reviews-iframe-wrapper">
-          <iframe
-            src="https://yandex.ru/maps-reviews-widget/67905101910?comments"
-            style="border: 1px solid #e6e6e6; border-radius: 12px"
-            loading="lazy"
-          ></iframe>
-          <a
-            href="https://yandex.ru/maps/org/head_line/67905101910/"
-            target="_blank"
-            class="yandex-link"
-          >
-            Head Line на карте Санкт‑Петербурга — Яндекс Карты
-          </a>
+          <div class="reviews-iframe-wrapper">
+            <iframe
+              src="https://yandex.ru/maps-reviews-widget/67905101910?comments"
+              style="border: 1px solid #e6e6e6; border-radius: 12px"
+              loading="lazy"
+            ></iframe>
+            <a
+              href="https://yandex.ru/maps/org/head_line/67905101910/"
+              target="_blank"
+              class="yandex-link"
+            >
+              Head Line на карте Санкт‑Петербурга — Яндекс Карты
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -112,7 +121,7 @@
           <div class="footer-column footer-nav">
             <a href="index.html">Главная</a>
             <a href="mens.html">Услуги</a>
-            <a href="training.html">Обучение</a>
+            <!-- <a href="training.html">Обучение</a> -->
             <a href="#">Контакты</a>
           </div>
 
@@ -123,12 +132,12 @@
               <a href="tel:+79219342307">+7 (921) 934-23-07</a>
             </p>
             <p>
-              <strong>Email:</strong>
-              <a href="mailto:knskotov@yandex.ru">knskotov@yandex.ru</a>
-            </p>
-            <p>
               <strong>Адрес:</strong> г. Санкт-Петербург,<br />ул. Рузовская, д.
               13
+            </p>
+            <p>
+              <strong>Разработчик сайта:</strong>
+              <a href="https://t.me/Andrew_Romanov_SPB">Андрей Романов</a>
             </p>
           </div>
         </div>

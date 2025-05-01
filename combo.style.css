@@ -129,7 +129,7 @@ html {
 }  
 
 .logo img {
-  height: 35px;
+  height: 40px;
 }
 
 /* Навигация */
@@ -232,7 +232,7 @@ html {
 .page-layout {
   display: flex;
   align-items: flex-start;
-  gap: 60px;
+  gap: 40px;
   position: relative;
 }
     
@@ -445,7 +445,9 @@ html {
 
   .page-title {
     font-size: 24px;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-align: center;
+
   }
 
   .service-list {
@@ -552,7 +554,7 @@ html {
   a:focus,
   a:active {
     color: #e0c066;
-    text-shadow: 0 0 8px #e0c066;
+    text-shadow: 0 0 1px #e0c066;
   }
 }
 
@@ -560,7 +562,7 @@ html {
 @media (max-width: 768px) {
   .burger.active span {
     background-color: #e0c066;
-    box-shadow: 0 0 10px #e0c066;
+    box-shadow: 0 0 1px #e0c066;
   }
 }
 

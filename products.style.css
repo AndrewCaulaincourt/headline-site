@@ -197,7 +197,7 @@ body::before {
 
 /* Логотип */
 .logo img {
-  height: 35px;
+  height: 40px;
 }
 
 /* Навигация */
@@ -301,94 +301,6 @@ body::before {
   }
 }
 
-/* Стили для кнопок меню бургера (подсветка + свечение) */
-@media (max-width: 768px) {
-  a:hover,
-  a:focus,
-  a:active {
-    color: #e0c066;
-    text-shadow: 0 0 8px #e0c066;
-  }
-}
-
-/* Стили бургера (подсветка + свечение) */
-@media (max-width: 768px) {
-  .burger.active span {
-    background-color: #e0c066;
-    box-shadow: 0 0 10px #e0c066;
-  }
-}
-
-/* Адаптив для планшетов */
-@media (max-width: 1024px) {
-  .page-layout {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .fixed-left-title {
-    position: static;
-    text-align: center;
-    transform: none;
-    margin-bottom: 20px;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-  .product-card img {
-    height: 220px;
-  }
-}
-
-/* Адаптив для мобильных (я плакал) */
-@media (max-width: 768px) {
-  .page-layout {
-    padding: 0 10px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .fixed-left-title {
-    position: static;
-    transform: none;
-    margin-bottom: 20px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-card img {
-    height: 200px;
-  }
-
-  .product-card {
-    padding: 15px;
-  }
-
-  .btn-buy {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .page-title {
-    font-size: 24px;
-    letter-spacing: 1.5px;
-    text-align: center;
-  }
-}
-
-
-
-
-
-
 #productModal {
   display: none;
   position: fixed;
@@ -444,4 +356,112 @@ body::before {
   font-size: 22px;
   color: #e0c066;
   margin-bottom: 10px;
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 1024px) {
+  .page-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .fixed-left-title {
+    position: static;
+    text-align: center;
+    transform: none;
+    margin-bottom: 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  a:hover,
+  a:focus,
+  a:active {
+    color: #e0c066;
+    text-shadow: 0 0 1px #e0c066;
+  }
+  
+  /* Стили бургера (подсветка + свечение) */
+  .burger.active span {
+    background-color: #e0c066;
+    box-shadow: 0 0 1px #e0c066;
+  }
+  .page-layout {
+    padding: 0 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fixed-left-title {
+    position: static;
+    transform: none;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 200px;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  .btn-buy {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .page-title {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+
+  /* Адаптив модального окна с описанием товара для мобильных */
+  .product-modal-content {
+    padding: 20px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .product-modal-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .product-modal-image img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .product-modal-details {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .close-btn {
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+  }
 }
