@@ -81,9 +81,11 @@
         <a
           href="#"
           class="hero-btn yclients-widget-button"
+          data-ywidget-id="1127595"
           data-ywidget-type="button"
-          >Записаться</a
         >
+          Записаться
+        </a>
       </div>
     </section>
 
@@ -429,22 +431,22 @@
       src="//w1127595.yclients.com/widgetJS"
       charset="UTF-8"
     ></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const btn = document.getElementById("yclients-booking-btn");
-        if (btn && typeof YWidget !== "undefined") {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            YWidget.init({
-              companyId: 1127595,
-              theme: "dark",
-              backgroundColor: "#0f0f0f",
-              primaryColor: "#e0c066",
-            });
-          });
-        }
+      $(document).ready(function () {
+        $(".yclients-widget-button").addClass("ms_booking");
+
+        var scriptService = document.createElement("script");
+        scriptService.src = "https://w1127595.yclients.com/widgetJS";
+        scriptService.type = "text/javascript";
+        scriptService.charset = "UTF-8";
+
+        document.documentElement.appendChild(scriptService);
       });
     </script>
+
     <script src="modal.js"></script>
   </body>
 </html>
