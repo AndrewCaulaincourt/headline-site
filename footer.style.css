@@ -3,7 +3,7 @@
   background-color: #0f0f0f;
   color: #fff;
   padding: 10px 20px 30px;
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   border-top: 0.5px solid #c9a93b;
 }
 
@@ -138,7 +138,7 @@
   .footer-top {
     flex-direction: column;
     align-items: center;
-    gap: 0 !important; 
+    gap: 0 !important;
     margin-bottom: 0 !important;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -147,11 +147,12 @@
   .footer-column {
     flex: 5 5 125px;
     margin: 0 !important;
-    padding: 5px 0 !important; 
+    padding: 5px 0 !important;
   }
 
   .footer-logo img {
     height: 100px;
+    height: auto;
     margin-bottom: 6px;
   }
 
