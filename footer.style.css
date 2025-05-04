@@ -45,8 +45,11 @@
 
 /* Логотип */
 .footer-logo img {
-  height: 100px;
+  height: 80px;
+  max-width: 100%;
   margin-bottom: 15px;
+  object-fit: contain;
+  display: block;
 }
 
 /* Соцсети */
@@ -151,8 +154,8 @@
   }
 
   .footer-logo img {
-    height: 100px;
-    height: auto;
+    height: 60px;
+    width: auto;
     margin-bottom: 6px;
   }
 
