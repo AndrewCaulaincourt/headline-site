@@ -547,16 +547,6 @@ html {
   }
 }
 
-/* Стили для кнопок меню бургера (подсветка + свечение) */
-@media (max-width: 768px) {
-  a:hover,
-  a:focus,
-  a:active {
-    color: #e0c066;
-    text-shadow: 0 0 1px #e0c066;
-  }
-}
-
 /* Стили бургера (подсветка + свечение) */
 @media (max-width: 768px) {
   .burger.active span {
