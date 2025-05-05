@@ -325,11 +325,3 @@ body {
     align-items: center;
   }
 }
-
-/* Стили бургера (подсветка + свечение) */
-@media (max-width: 768px) {
-  .burger.active span {
-    background-color: #e0c066;
-    box-shadow: 0 0 1px #e0c066;
-  }
-}
