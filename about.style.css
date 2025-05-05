@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Russo+One&display=swap'); /* шрифты используемые на странице */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Russo+One&display=swap"); /* шрифты используемые на странице */
 
 /* Стиль страницы в целом */
 body {
   margin: 0;
   padding-top: 80px; /* высота хедера + запас */
-  font-family: 'Rubik', sans-serif; /* Шрифт на описание (текст) */
+  font-family: "Rubik", sans-serif; /* Шрифт на описание (текст) */
   background-color: #000000;
   position: relative;
   z-index: 0;
@@ -12,7 +12,7 @@ body {
 
 /* Затемнение как в баннере */
 body::after {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.6); /* затемняем, как на главной */
@@ -21,13 +21,13 @@ body::after {
 
 /* КРУГ — по центру, огромный и медленно вращается */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: calc(50% + 40px);
   left: 50%;
   width: 1900px;
   height: 1900px;
-  background: url('images/calligraphy-circle.svg') no-repeat center center;
+  background: url("images/calligraphy-circle.svg") no-repeat center center;
   background-size: contain;
   opacity: 0.3;
   transform: translate(-50%, -50%);
@@ -60,7 +60,7 @@ body::before {
 }
 
 .page-title {
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   font-size: 32px;
   font-weight: bold;
   color: #e0c066;
@@ -123,4 +123,3 @@ body::before {
     text-align: left;
   }
 }
-
