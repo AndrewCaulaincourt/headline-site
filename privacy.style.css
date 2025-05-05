@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Russo+One&display=swap'); /* шрифты используемые на странице */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Russo+One&display=swap"); /* шрифты используемые на странице */
 
 /* Стиль страницы в целом + шрифт */
 body {
   margin: 0;
   padding-top: 80px; /* высота хедера + запас */
-  font-family: 'Rubik', sans-serif; /* Шрифт на описание (текст) */
+  font-family: "Rubik", sans-serif; /* Шрифт на описание (текст) */
   background-color: #000000;
   color: #fff;
   position: relative;
@@ -73,7 +73,7 @@ body {
   left: 0;
   background-color: #2a2a2a;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   display: none;
   flex-direction: column;
   min-width: 220px;
@@ -115,7 +115,7 @@ body {
 
 /* Шрифт на кнопки Хедер: Russo One */
 .header .nav-list a {
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   letter-spacing: 0.5px;
 }
 
@@ -131,7 +131,7 @@ body {
 
 /* Заголовок главной страницы */
 .policy-content h1 {
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   font-size: 36px;
   color: #e0c066;
   text-transform: uppercase;
@@ -141,7 +141,7 @@ body {
 
 /* Подразделы */
 .policy-content h2 {
-  font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
   font-size: 24px;
   color: #e0c066;
   margin-top: 40px;
@@ -332,7 +332,7 @@ body {
   a:focus,
   a:active {
     color: #e0c066;
-    text-shadow: 0 0 8px #e0c066;
+    text-shadow: 0 0 1px #e0c066;
   }
 }
 
@@ -340,7 +340,6 @@ body {
 @media (max-width: 768px) {
   .burger.active span {
     background-color: #e0c066;
-    box-shadow: 0 0 10px #e0c066;
+    box-shadow: 0 0 1px #e0c066;
   }
 }
-
